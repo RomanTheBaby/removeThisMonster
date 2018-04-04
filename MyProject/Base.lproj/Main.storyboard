@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="MyProject" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -688,7 +689,7 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-			<connections>
+                        <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
                     </window>
@@ -703,10 +704,59 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="MyProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="e18-8I-naG">
+                                <rect key="frame" x="136" y="124" width="209" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="OrE-eq-2e1"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Логін" drawsBackground="YES" id="JOw-PB-Vyr">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UaF-PM-f1P">
+                                <rect key="frame" x="136" y="93" width="209" height="22"/>
+                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Пароль" drawsBackground="YES" usesSingleLineMode="YES" id="aBD-2E-O0n">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <allowedInputSourceLocales>
+                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                    </allowedInputSourceLocales>
+                                </secureTextFieldCell>
+                            </secureTextField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="J0u-W0-aXp">
+                                <rect key="frame" x="170" y="154" width="140" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Zoy-pl-iej"/>
+                                    <constraint firstAttribute="width" constant="136" id="px5-nR-RzB"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Authentication" id="brU-uk-VZB">
+                                    <font key="font" metaFont="systemBold" size="17"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="UaF-PM-f1P" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="1AM-VO-efE"/>
+                            <constraint firstItem="e18-8I-naG" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="136" id="2VH-Yn-HZ7"/>
+                            <constraint firstItem="UaF-PM-f1P" firstAttribute="trailing" secondItem="e18-8I-naG" secondAttribute="trailing" id="IVU-jN-orA"/>
+                            <constraint firstItem="UaF-PM-f1P" firstAttribute="top" secondItem="e18-8I-naG" secondAttribute="bottom" constant="9" id="OaS-Vj-eKR"/>
+                            <constraint firstAttribute="trailing" secondItem="e18-8I-naG" secondAttribute="trailing" constant="135" id="ddC-wm-3yR"/>
+                            <constraint firstItem="e18-8I-naG" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="eCz-yH-msY"/>
+                            <constraint firstItem="e18-8I-naG" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="lCx-YC-Pvx"/>
+                            <constraint firstItem="J0u-W0-aXp" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="ooh-8U-YoS"/>
+                            <constraint firstItem="UaF-PM-f1P" firstAttribute="leading" secondItem="e18-8I-naG" secondAttribute="leading" id="qcW-80-RSj"/>
+                            <constraint firstItem="UaF-PM-f1P" firstAttribute="height" secondItem="e18-8I-naG" secondAttribute="height" id="qhR-Ki-kiF"/>
+                            <constraint firstItem="e18-8I-naG" firstAttribute="top" secondItem="J0u-W0-aXp" secondAttribute="bottom" constant="8" id="rVX-Jf-mMq"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
