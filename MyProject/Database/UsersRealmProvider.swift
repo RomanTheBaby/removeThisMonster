@@ -10,7 +10,7 @@ import Cocoa
 import RealmSwift
 
 protocol UsersRealmProviderProtocol {
-
+    func saveUser(_ user: User)
 }
 
 final class UsersRealmProvider: UsersRealmProviderProtocol {
@@ -38,6 +38,15 @@ final class UsersRealmProvider: UsersRealmProviderProtocol {
 
         guard let realm = try? Realm(configuration: realmConfiguration) else { return nil }
         return realm
+    }
+
+    func retrieUser(with authInfo: AuthInfo) -> User? {
+        guard let realm = realm() else { return nil }
+        let predicate = NSPredicate(format: "username == \(authInfo.username), password == \(authInfo.password)")
+        let realmResults = realm.objects(DBUser.self).filter(predicate)
+
+        let user = Array(realmResults).first.map { $0.asDomain }
+        return user
     }
 
     func saveUser(_ user: User) {

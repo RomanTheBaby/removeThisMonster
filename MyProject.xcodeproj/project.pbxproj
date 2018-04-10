@@ -14,6 +14,7 @@
 		0939DAEA207D588600ABCBD4 /* CardStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939DAE9207D588600ABCBD4 /* CardStatus.swift */; };
 		0939DAED207D58B200ABCBD4 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939DAEC207D58B200ABCBD4 /* Card.swift */; };
 		0939DAEF207D58DA00ABCBD4 /* DBCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939DAEE207D58DA00ABCBD4 /* DBCard.swift */; };
+		0939DAF1207D5F9E00ABCBD4 /* AuthInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939DAF0207D5F9E00ABCBD4 /* AuthInfo.swift */; };
 		094CE9A72075438200FE361A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094CE9A62075438200FE361A /* AppDelegate.swift */; };
 		094CE9AB2075438400FE361A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 094CE9AA2075438400FE361A /* Assets.xcassets */; };
 		094CE9AE2075438400FE361A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 094CE9AC2075438400FE361A /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		0939DAE9207D588600ABCBD4 /* CardStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStatus.swift; sourceTree = "<group>"; };
 		0939DAEC207D58B200ABCBD4 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		0939DAEE207D58DA00ABCBD4 /* DBCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBCard.swift; sourceTree = "<group>"; };
+		0939DAF0207D5F9E00ABCBD4 /* AuthInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInfo.swift; sourceTree = "<group>"; };
 		094CE9A32075438200FE361A /* MyProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		094CE9A62075438200FE361A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		094CE9AA2075438400FE361A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				094CE9B92075458900FE361A /* User.swift */,
+				0939DAF0207D5F9E00ABCBD4 /* AuthInfo.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				0939DAE8207D57EE00ABCBD4 /* DBUser.swift in Sources */,
 				0939DAEA207D588600ABCBD4 /* CardStatus.swift in Sources */,
 				0939DAEF207D58DA00ABCBD4 /* DBCard.swift in Sources */,
+				0939DAF1207D5F9E00ABCBD4 /* AuthInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
