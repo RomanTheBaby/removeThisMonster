@@ -12,4 +12,5 @@ struct User {
     var username: String
     var password: String
     var identifier: Int
+    var cards: [Card]
 }

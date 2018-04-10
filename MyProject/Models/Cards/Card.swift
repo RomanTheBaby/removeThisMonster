@@ -9,6 +9,7 @@
 import Cocoa
 
 struct Card {
+    var id: Int
     var title: String
     var status: CardStatus
     var description: String
