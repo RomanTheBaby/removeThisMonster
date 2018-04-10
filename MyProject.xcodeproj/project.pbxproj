@@ -7,20 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0939DAE0207D553600ABCBD4 /* UsersRealmProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939DADF207D553600ABCBD4 /* UsersRealmProvider.swift */; };
+		0939DAE4207D555A00ABCBD4 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0939DAE2207D555A00ABCBD4 /* Realm.framework */; };
+		0939DAE5207D555A00ABCBD4 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0939DAE3207D555A00ABCBD4 /* RealmSwift.framework */; };
+		0939DAE8207D57EE00ABCBD4 /* DBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939DAE7207D57EE00ABCBD4 /* DBUser.swift */; };
+		0939DAEA207D588600ABCBD4 /* CardStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939DAE9207D588600ABCBD4 /* CardStatus.swift */; };
+		0939DAED207D58B200ABCBD4 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939DAEC207D58B200ABCBD4 /* Card.swift */; };
+		0939DAEF207D58DA00ABCBD4 /* DBCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939DAEE207D58DA00ABCBD4 /* DBCard.swift */; };
 		094CE9A72075438200FE361A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094CE9A62075438200FE361A /* AppDelegate.swift */; };
-		094CE9A92075438200FE361A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094CE9A82075438200FE361A /* ViewController.swift */; };
 		094CE9AB2075438400FE361A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 094CE9AA2075438400FE361A /* Assets.xcassets */; };
 		094CE9AE2075438400FE361A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 094CE9AC2075438400FE361A /* Main.storyboard */; };
+		094CE9BA2075458900FE361A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094CE9B92075458900FE361A /* User.swift */; };
+		094CE9BE207545CB00FE361A /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094CE9BD207545CB00FE361A /* AuthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0939DADF207D553600ABCBD4 /* UsersRealmProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRealmProvider.swift; sourceTree = "<group>"; };
+		0939DAE2207D555A00ABCBD4 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
+		0939DAE3207D555A00ABCBD4 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
+		0939DAE7207D57EE00ABCBD4 /* DBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUser.swift; sourceTree = "<group>"; };
+		0939DAE9207D588600ABCBD4 /* CardStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStatus.swift; sourceTree = "<group>"; };
+		0939DAEC207D58B200ABCBD4 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		0939DAEE207D58DA00ABCBD4 /* DBCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBCard.swift; sourceTree = "<group>"; };
 		094CE9A32075438200FE361A /* MyProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		094CE9A62075438200FE361A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		094CE9A82075438200FE361A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		094CE9AA2075438400FE361A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		094CE9AD2075438400FE361A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		094CE9AF2075438400FE361A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		094CE9B02075438400FE361A /* MyProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyProject.entitlements; sourceTree = "<group>"; };
+		094CE9B92075458900FE361A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		094CE9BD207545CB00FE361A /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,17 +44,55 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0939DAE4207D555A00ABCBD4 /* Realm.framework in Frameworks */,
+				0939DAE5207D555A00ABCBD4 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0939DADE207D551D00ABCBD4 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				0939DADF207D553600ABCBD4 /* UsersRealmProvider.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		0939DAE1207D555900ABCBD4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0939DAE2207D555A00ABCBD4 /* Realm.framework */,
+				0939DAE3207D555A00ABCBD4 /* RealmSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0939DAE6207D57E500ABCBD4 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				0939DAE7207D57EE00ABCBD4 /* DBUser.swift */,
+				0939DAEE207D58DA00ABCBD4 /* DBCard.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		0939DAEB207D58A600ABCBD4 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				0939DAE9207D588600ABCBD4 /* CardStatus.swift */,
+				0939DAEC207D58B200ABCBD4 /* Card.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
 		094CE99A2075438200FE361A = {
 			isa = PBXGroup;
 			children = (
 				094CE9A52075438200FE361A /* MyProject */,
 				094CE9A42075438200FE361A /* Products */,
+				0939DAE1207D555900ABCBD4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,14 +107,50 @@
 		094CE9A52075438200FE361A /* MyProject */ = {
 			isa = PBXGroup;
 			children = (
+				0939DADE207D551D00ABCBD4 /* Database */,
+				094CE9BB207545B900FE361A /* Screens */,
+				094CE9B62075456C00FE361A /* Models */,
 				094CE9A62075438200FE361A /* AppDelegate.swift */,
-				094CE9A82075438200FE361A /* ViewController.swift */,
 				094CE9AA2075438400FE361A /* Assets.xcassets */,
 				094CE9AC2075438400FE361A /* Main.storyboard */,
 				094CE9AF2075438400FE361A /* Info.plist */,
 				094CE9B02075438400FE361A /* MyProject.entitlements */,
 			);
 			path = MyProject;
+			sourceTree = "<group>";
+		};
+		094CE9B62075456C00FE361A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0939DAEB207D58A600ABCBD4 /* Cards */,
+				0939DAE6207D57E500ABCBD4 /* Realm */,
+				094CE9B82075457F00FE361A /* User */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		094CE9B82075457F00FE361A /* User */ = {
+			isa = PBXGroup;
+			children = (
+				094CE9B92075458900FE361A /* User.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		094CE9BB207545B900FE361A /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				094CE9BC207545C100FE361A /* Auth */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		094CE9BC207545C100FE361A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				094CE9BD207545CB00FE361A /* AuthViewController.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,8 +223,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				094CE9A92075438200FE361A /* ViewController.swift in Sources */,
 				094CE9A72075438200FE361A /* AppDelegate.swift in Sources */,
+				0939DAE0207D553600ABCBD4 /* UsersRealmProvider.swift in Sources */,
+				0939DAED207D58B200ABCBD4 /* Card.swift in Sources */,
+				094CE9BE207545CB00FE361A /* AuthViewController.swift in Sources */,
+				094CE9BA2075458900FE361A /* User.swift in Sources */,
+				0939DAE8207D57EE00ABCBD4 /* DBUser.swift in Sources */,
+				0939DAEA207D588600ABCBD4 /* CardStatus.swift in Sources */,
+				0939DAEF207D58DA00ABCBD4 /* DBCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +368,10 @@
 				CODE_SIGN_ENTITLEMENTS = MyProject/MyProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = MyProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -290,6 +390,10 @@
 				CODE_SIGN_ENTITLEMENTS = MyProject/MyProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = MyProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
