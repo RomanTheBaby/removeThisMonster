@@ -15,6 +15,11 @@ class AuthViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        view.wantsLayer = true
+        view.layer?.backgroundColor = NSColor(red: 18/255, green: 122/255, blue: 189/255, alpha: 1.0).cgColor
+//        15/104/161
+//        96/177/77
     }
 
     @IBAction func textFieldAction(_ sender: NSTextField) {

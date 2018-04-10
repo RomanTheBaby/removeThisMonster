@@ -15,12 +15,29 @@
 		0939DAED207D58B200ABCBD4 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939DAEC207D58B200ABCBD4 /* Card.swift */; };
 		0939DAEF207D58DA00ABCBD4 /* DBCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939DAEE207D58DA00ABCBD4 /* DBCard.swift */; };
 		0939DAF1207D5F9E00ABCBD4 /* AuthInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939DAF0207D5F9E00ABCBD4 /* AuthInfo.swift */; };
+		0939DAF3207D620700ABCBD4 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0939DAE2207D555A00ABCBD4 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0939DAF5207D620700ABCBD4 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0939DAE3207D555A00ABCBD4 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		094CE9A72075438200FE361A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094CE9A62075438200FE361A /* AppDelegate.swift */; };
 		094CE9AB2075438400FE361A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 094CE9AA2075438400FE361A /* Assets.xcassets */; };
 		094CE9AE2075438400FE361A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 094CE9AC2075438400FE361A /* Main.storyboard */; };
 		094CE9BA2075458900FE361A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094CE9B92075458900FE361A /* User.swift */; };
 		094CE9BE207545CB00FE361A /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094CE9BD207545CB00FE361A /* AuthViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0939DAF6207D620700ABCBD4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0939DAF5207D620700ABCBD4 /* RealmSwift.framework in Embed Frameworks */,
+				0939DAF3207D620700ABCBD4 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0939DADF207D553600ABCBD4 /* UsersRealmProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRealmProvider.swift; sourceTree = "<group>"; };
@@ -166,6 +183,7 @@
 				094CE99F2075438200FE361A /* Sources */,
 				094CE9A02075438200FE361A /* Frameworks */,
 				094CE9A12075438200FE361A /* Resources */,
+				0939DAF6207D620700ABCBD4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
