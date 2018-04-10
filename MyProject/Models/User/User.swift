@@ -11,6 +11,6 @@ import Cocoa
 struct User {
     var username: String
     var password: String
-    var identifier: Int
+    var created: Date
     var cards: [Card]
 }

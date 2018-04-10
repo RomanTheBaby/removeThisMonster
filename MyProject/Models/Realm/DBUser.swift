@@ -10,26 +10,27 @@ import Cocoa
 import RealmSwift
 
 class DBUser: Object {
-    @objc dynamic var id = 0
+    @objc dynamic var created = 0
     @objc dynamic var username = ""
     @objc dynamic var password = ""
     @objc dynamic var cards: [DBCard]?
 
     override static func primaryKey() -> String? {
-        return "id"
+        return "created"
     }
 
     var asDomain: User {
         let userCards = cards?.compactMap { $0.asDomain } ?? []
 
-        return User(username: username, password: password, identifier: id, cards: userCards)
+        let formattedDate = Date(timeIntervalSince1970: Double(created))
+        return User(username: username, password: password, created: formattedDate, cards: userCards)
     }
 
     func sync(domain: User) {
 
-        if id != domain.identifier {
+        if created != Int(domain.created.timeIntervalSince1970) {
             // Realm throws fatalError if inserted object primary key is being changed, even if key is same
-            self.id = domain.identifier
+            self.created = Int(domain.created.timeIntervalSince1970)
         }
 
         username = domain.username

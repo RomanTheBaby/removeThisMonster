@@ -39,4 +39,22 @@ final class UsersRealmProvider: UsersRealmProviderProtocol {
         guard let realm = try? Realm(configuration: realmConfiguration) else { return nil }
         return realm
     }
+
+    func saveUser(_ user: User) {
+        guard let realm = realm() else { return }
+
+        realm.beginWrite()
+
+        let realmUser = realm.object(ofType: DBUser.self, forPrimaryKey: Int(user.created.timeIntervalSince1970)) ?? DBUser()
+
+        realmUser.sync(domain: user)
+
+        realm.add(realmUser)
+
+        do {
+            try realm.commitWrite()
+        } catch let error {
+            print("Error writing Down: ", error.localizedDescription)
+        }
+    }
 }
