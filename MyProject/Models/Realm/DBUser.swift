@@ -38,7 +38,7 @@ class DBUser: Object {
 
         cards = domain.cards.compactMap { card -> DBCard in
             let dbCard = DBCard()
-            dbCard.id = card.id
+            dbCard.created = Int(card.created.timeIntervalSince1970)
             dbCard.desc = card.description
             dbCard.title = card.title
             dbCard.status = card.status.rawValue

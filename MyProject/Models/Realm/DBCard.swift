@@ -10,23 +10,31 @@ import Cocoa
 import RealmSwift
 
 class DBCard: Object {
-    @objc dynamic var id = 0
+    @objc dynamic var created = 0
     @objc dynamic var desc = ""
     @objc dynamic var title = ""
     @objc dynamic var status = CardStatus.toDo.rawValue
 
     override static func primaryKey() -> String? {
-        return "id"
+        return "created"
     }
 
     var asDomain: Card {
         let cardStatus = CardStatus(rawValue: status) ?? .toDo
-        let card = Card(id: id, title: title,
-                        status: cardStatus, description: desc)
+        let formattedDate = Date(timeIntervalSince1970: Double(created))
+
+        let card = Card(title: title, status: cardStatus,
+                        created: formattedDate, description: desc)
         return card
     }
 
     func sync(domain: Card) {
+
+        if created != Int(domain.created.timeIntervalSince1970) {
+            // Realm throws fatalError if inserted object primary key is being changed, even if key is same
+            self.created = Int(domain.created.timeIntervalSince1970)
+        }
+
         desc = domain.description
         title = domain.title
         status = domain.status.rawValue
