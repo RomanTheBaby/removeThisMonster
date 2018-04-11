@@ -17,6 +17,8 @@
 		0939DAF1207D5F9E00ABCBD4 /* AuthInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939DAF0207D5F9E00ABCBD4 /* AuthInfo.swift */; };
 		0939DAF3207D620700ABCBD4 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0939DAE2207D555A00ABCBD4 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0939DAF5207D620700ABCBD4 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0939DAE3207D555A00ABCBD4 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0939DAFA207D688D00ABCBD4 /* NSView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939DAF9207D688D00ABCBD4 /* NSView+Extension.swift */; };
+		0939DAFC207DE35900ABCBD4 /* NSColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0939DAFB207DE35900ABCBD4 /* NSColor+Extension.swift */; };
 		094CE9A72075438200FE361A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094CE9A62075438200FE361A /* AppDelegate.swift */; };
 		094CE9AB2075438400FE361A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 094CE9AA2075438400FE361A /* Assets.xcassets */; };
 		094CE9AE2075438400FE361A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 094CE9AC2075438400FE361A /* Main.storyboard */; };
@@ -48,6 +50,8 @@
 		0939DAEC207D58B200ABCBD4 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		0939DAEE207D58DA00ABCBD4 /* DBCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBCard.swift; sourceTree = "<group>"; };
 		0939DAF0207D5F9E00ABCBD4 /* AuthInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInfo.swift; sourceTree = "<group>"; };
+		0939DAF9207D688D00ABCBD4 /* NSView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+Extension.swift"; sourceTree = "<group>"; };
+		0939DAFB207DE35900ABCBD4 /* NSColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+Extension.swift"; sourceTree = "<group>"; };
 		094CE9A32075438200FE361A /* MyProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		094CE9A62075438200FE361A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		094CE9AA2075438400FE361A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,6 +110,25 @@
 			path = Cards;
 			sourceTree = "<group>";
 		};
+		0939DAF7207D64B800ABCBD4 /* Resourse */ = {
+			isa = PBXGroup;
+			children = (
+				094CE9A62075438200FE361A /* AppDelegate.swift */,
+				094CE9AA2075438400FE361A /* Assets.xcassets */,
+				094CE9AC2075438400FE361A /* Main.storyboard */,
+			);
+			path = Resourse;
+			sourceTree = "<group>";
+		};
+		0939DAF8207D688000ABCBD4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0939DAF9207D688D00ABCBD4 /* NSView+Extension.swift */,
+				0939DAFB207DE35900ABCBD4 /* NSColor+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		094CE99A2075438200FE361A = {
 			isa = PBXGroup;
 			children = (
@@ -126,12 +149,11 @@
 		094CE9A52075438200FE361A /* MyProject */ = {
 			isa = PBXGroup;
 			children = (
+				0939DAF8207D688000ABCBD4 /* Extension */,
+				0939DAF7207D64B800ABCBD4 /* Resourse */,
 				0939DADE207D551D00ABCBD4 /* Database */,
 				094CE9BB207545B900FE361A /* Screens */,
 				094CE9B62075456C00FE361A /* Models */,
-				094CE9A62075438200FE361A /* AppDelegate.swift */,
-				094CE9AA2075438400FE361A /* Assets.xcassets */,
-				094CE9AC2075438400FE361A /* Main.storyboard */,
 				094CE9AF2075438400FE361A /* Info.plist */,
 				094CE9B02075438400FE361A /* MyProject.entitlements */,
 			);
@@ -244,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0939DAFC207DE35900ABCBD4 /* NSColor+Extension.swift in Sources */,
 				094CE9A72075438200FE361A /* AppDelegate.swift in Sources */,
 				0939DAE0207D553600ABCBD4 /* UsersRealmProvider.swift in Sources */,
 				0939DAED207D58B200ABCBD4 /* Card.swift in Sources */,
@@ -251,6 +274,7 @@
 				094CE9BA2075458900FE361A /* User.swift in Sources */,
 				0939DAE8207D57EE00ABCBD4 /* DBUser.swift in Sources */,
 				0939DAEA207D588600ABCBD4 /* CardStatus.swift in Sources */,
+				0939DAFA207D688D00ABCBD4 /* NSView+Extension.swift in Sources */,
 				0939DAEF207D58DA00ABCBD4 /* DBCard.swift in Sources */,
 				0939DAF1207D5F9E00ABCBD4 /* AuthInfo.swift in Sources */,
 			);

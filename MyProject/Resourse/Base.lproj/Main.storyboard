@@ -738,9 +738,8 @@
                                 </connections>
                             </secureTextField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="J0u-W0-aXp">
-                                <rect key="frame" x="170" y="164" width="140" height="21"/>
+                                <rect key="frame" x="170" y="164" width="141" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="136" id="4Lf-dT-o06"/>
                                     <constraint firstAttribute="height" constant="21" id="RTE-cf-G8I"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Аутентифікація" id="brU-uk-VZB">
@@ -749,10 +748,13 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gpe-PI-P6H">
-                                <rect key="frame" x="184" y="42" width="110" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="buttonCell:3EI-0w-Cgs:image" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="3EI-0w-Cgs">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QNf-Is-GDB">
+                                <rect key="frame" x="202" y="46" width="77" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="YRo-ko-3sY"/>
+                                    <constraint firstAttribute="width" constant="77" id="ngz-QQ-ABE"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="buttonCell:aQU-T0-AwI:image" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aQU-T0-AwI">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -764,15 +766,17 @@
                             <constraint firstItem="UaF-PM-f1P" firstAttribute="height" secondItem="e18-8I-naG" secondAttribute="height" id="7UW-2y-Llr"/>
                             <constraint firstItem="e18-8I-naG" firstAttribute="top" secondItem="J0u-W0-aXp" secondAttribute="bottom" constant="16" id="7fv-6o-8LX"/>
                             <constraint firstItem="e18-8I-naG" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="DY3-zy-1We"/>
+                            <constraint firstItem="QNf-Is-GDB" firstAttribute="centerX" secondItem="UaF-PM-f1P" secondAttribute="centerX" id="Ein-j0-G6T"/>
                             <constraint firstItem="UaF-PM-f1P" firstAttribute="top" secondItem="e18-8I-naG" secondAttribute="bottom" constant="15" id="Jpm-KY-3nI"/>
                             <constraint firstItem="UaF-PM-f1P" firstAttribute="trailing" secondItem="e18-8I-naG" secondAttribute="trailing" id="QYe-5J-2FS"/>
-                            <constraint firstItem="e18-8I-naG" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="bf5-dJ-Ic5"/>
+                            <constraint firstItem="QNf-Is-GDB" firstAttribute="top" secondItem="UaF-PM-f1P" secondAttribute="bottom" constant="16" id="fHI-pN-cv0"/>
                             <constraint firstAttribute="trailing" secondItem="e18-8I-naG" secondAttribute="trailing" constant="135.5" id="fNf-OP-giZ"/>
                             <constraint firstItem="e18-8I-naG" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="135.5" id="gsA-od-uYe"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="passwordTextField" destination="UaF-PM-f1P" id="yee-CG-Qm5"/>
+                        <outlet property="signInButton" destination="QNf-Is-GDB" id="Jhh-sK-vso"/>
                         <outlet property="usernameTextField" destination="e18-8I-naG" id="V4D-U6-S8B"/>
                     </connections>
                 </viewController>
@@ -782,7 +786,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="buttonCell:3EI-0w-Cgs:image" width="1" height="1">
+        <image name="buttonCell:aQU-T0-AwI:image" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGVVZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEgcI
 ExQZHh8jJCsuMTtDR0tPUlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdz
