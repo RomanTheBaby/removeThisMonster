@@ -1,14 +1,14 @@
 //
-//  AuthViewController.swift
+//  RegistrationViewController.swift
 //  MyProject
 //
-//  Created by Baby on 4/4/18.
+//  Created by Baby on 4/11/18.
 //  Copyright © 2018 Alina. All rights reserved.
 //
 
 import Cocoa
 
-class AuthViewController: NSViewController {
+class RegistrationViewController: NSViewController {
 
     @IBOutlet weak private var usernameTextField: NSTextField!
     @IBOutlet weak private var passwordTextField: NSTextField!
@@ -34,8 +34,8 @@ class AuthViewController: NSViewController {
 
         signInButton.isBordered = false
         signInButton.wantsLayer = true
-        signInButton.layer?.backgroundColor = NSColor.darkBlue.cgColor
-        signInButton.attributedTitle = NSAttributedString(string: "Увійти",
+        signInButton.layer?.backgroundColor = NSColor.lightGreen.cgColor
+        signInButton.attributedTitle = NSAttributedString(string: "Зареєструватись",
                                                           attributes: [.foregroundColor: NSColor.white,
                                                                        .paragraphStyle: pstyle])
     }
@@ -52,8 +52,4 @@ class AuthViewController: NSViewController {
 
     @IBAction func actionLogin(_ sender: NSButton) {
     }
-
-}
-
-extension AuthViewController: NSTextFieldDelegate {
 }
