@@ -62,7 +62,6 @@ class RegistrationViewController: NSViewController {
             print("Saved")
         }) { (error) in
             self.showMessage(error.localizedDescription)
-//            self.showAlert(for: error)
         }
     }
 

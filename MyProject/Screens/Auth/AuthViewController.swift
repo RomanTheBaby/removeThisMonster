@@ -56,6 +56,16 @@ class AuthViewController: NSViewController {
                 self.showMessage("Усі поля повинні бути заповнені")
                 return
         }
+
+        let authInfo = AuthInfo(username: username, password: password)
+
+        guard let user = UsersRealmProvider.SharedInstance.retriveUser(with: authInfo)
+            else {
+                self.showMessage("Користувача з такими задими не існує!")
+                return
+        }
+
+        print("Користувач існує")
     }
 
     private func showMessage(_ message: String) {
