@@ -685,11 +685,11 @@
             <objects>
                 <viewController title="Увійти" id="XfG-lQ-9wD" customClass="AuthViewController" customModule="MyProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" appearanceType="aqua" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="e18-8I-naG">
-                                <rect key="frame" x="136" y="123" width="209" height="25"/>
+                                <rect key="frame" x="136" y="170" width="209" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="M3n-mS-XGR"/>
                                 </constraints>
@@ -703,7 +703,7 @@
                                 </connections>
                             </textField>
                             <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UaF-PM-f1P">
-                                <rect key="frame" x="136" y="83" width="209" height="25"/>
+                                <rect key="frame" x="136" y="130" width="209" height="25"/>
                                 <secureTextFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" continuous="YES" borderStyle="bezel" baseWritingDirection="leftToRight" alignment="left" placeholderString="Пароль" drawsBackground="YES" allowsEditingTextAttributes="YES" usesSingleLineMode="YES" id="aBD-2E-O0n">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -717,7 +717,7 @@
                                 </connections>
                             </secureTextField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="J0u-W0-aXp">
-                                <rect key="frame" x="170" y="164" width="141" height="21"/>
+                                <rect key="frame" x="170" y="211" width="141" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="RTE-cf-G8I"/>
                                 </constraints>
@@ -728,7 +728,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QNf-Is-GDB">
-                                <rect key="frame" x="173" y="20" width="134" height="47"/>
+                                <rect key="frame" x="173" y="67" width="134" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="YRo-ko-3sY"/>
                                     <constraint firstAttribute="width" constant="134" id="ngz-QQ-ABE"/>
@@ -741,22 +741,37 @@
                                     <action selector="actionLogin:" target="XfG-lQ-9wD" id="lGY-8x-tkC"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lb9-Gy-7Du">
+                                <rect key="frame" x="18" y="28" width="444" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="phE-do-ttL"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="looool" id="S0M-bd-Pdz">
+                                    <font key="font" metaFont="system" size="16"/>
+                                    <color key="textColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="J0u-W0-aXp" firstAttribute="centerX" secondItem="e18-8I-naG" secondAttribute="centerX" id="1fn-tf-vnY"/>
                             <constraint firstItem="UaF-PM-f1P" firstAttribute="leading" secondItem="e18-8I-naG" secondAttribute="leading" id="50Q-5x-c1Y"/>
                             <constraint firstItem="UaF-PM-f1P" firstAttribute="height" secondItem="e18-8I-naG" secondAttribute="height" id="7UW-2y-Llr"/>
                             <constraint firstItem="e18-8I-naG" firstAttribute="top" secondItem="J0u-W0-aXp" secondAttribute="bottom" constant="16" id="7fv-6o-8LX"/>
-                            <constraint firstItem="e18-8I-naG" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="DY3-zy-1We"/>
+                            <constraint firstAttribute="trailing" secondItem="lb9-Gy-7Du" secondAttribute="trailing" constant="20" id="9xt-1L-APp"/>
+                            <constraint firstItem="e18-8I-naG" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" constant="-32.5" id="DY3-zy-1We"/>
                             <constraint firstItem="QNf-Is-GDB" firstAttribute="centerX" secondItem="UaF-PM-f1P" secondAttribute="centerX" id="Ein-j0-G6T"/>
                             <constraint firstItem="UaF-PM-f1P" firstAttribute="top" secondItem="e18-8I-naG" secondAttribute="bottom" constant="15" id="Jpm-KY-3nI"/>
+                            <constraint firstItem="lb9-Gy-7Du" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="MfW-Jx-YUI"/>
                             <constraint firstItem="UaF-PM-f1P" firstAttribute="trailing" secondItem="e18-8I-naG" secondAttribute="trailing" id="QYe-5J-2FS"/>
                             <constraint firstItem="QNf-Is-GDB" firstAttribute="top" secondItem="UaF-PM-f1P" secondAttribute="bottom" constant="16" id="fHI-pN-cv0"/>
                             <constraint firstAttribute="trailing" secondItem="e18-8I-naG" secondAttribute="trailing" constant="135.5" id="fNf-OP-giZ"/>
                             <constraint firstItem="e18-8I-naG" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="135.5" id="gsA-od-uYe"/>
+                            <constraint firstItem="lb9-Gy-7Du" firstAttribute="top" secondItem="QNf-Is-GDB" secondAttribute="bottom" constant="20" id="w7e-U2-sZS"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="errorLabel" destination="lb9-Gy-7Du" id="IVF-c8-fop"/>
                         <outlet property="passwordTextField" destination="UaF-PM-f1P" id="yee-CG-Qm5"/>
                         <outlet property="signInButton" destination="QNf-Is-GDB" id="Jhh-sK-vso"/>
                         <outlet property="usernameTextField" destination="e18-8I-naG" id="V4D-U6-S8B"/>
@@ -790,18 +805,18 @@
                 </tabViewController>
                 <customObject id="VhF-jD-q3x" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="710"/>
+            <point key="canvasLocation" x="74" y="685"/>
         </scene>
         <!--Зареєстурватись-->
         <scene sceneID="F6F-39-Thb">
             <objects>
                 <viewController title="Зареєстурватись" id="1Ph-sV-tBW" customClass="RegistrationViewController" customModule="MyProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" appearanceType="aqua" id="Kl1-Vk-1J2">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yFh-ta-NHM">
-                                <rect key="frame" x="136" y="123" width="209" height="25"/>
+                                <rect key="frame" x="136" y="170" width="209" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Aea-JG-Dfl"/>
                                 </constraints>
@@ -815,7 +830,7 @@
                                 </connections>
                             </textField>
                             <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XvB-ag-r6a">
-                                <rect key="frame" x="136" y="83" width="209" height="25"/>
+                                <rect key="frame" x="136" y="130" width="209" height="25"/>
                                 <secureTextFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" continuous="YES" borderStyle="bezel" baseWritingDirection="leftToRight" alignment="left" placeholderString="Пароль" drawsBackground="YES" allowsEditingTextAttributes="YES" usesSingleLineMode="YES" id="y0x-36-Lyx">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -829,7 +844,7 @@
                                 </connections>
                             </secureTextField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Gnm-xa-lDe">
-                                <rect key="frame" x="189" y="164" width="103" height="21"/>
+                                <rect key="frame" x="189" y="211" width="103" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="iHy-DE-DKk"/>
                                 </constraints>
@@ -840,7 +855,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="E64-9Y-DS3">
-                                <rect key="frame" x="173" y="20" width="134" height="47"/>
+                                <rect key="frame" x="173" y="67" width="134" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="134" id="0iy-Gk-YRi"/>
                                     <constraint firstAttribute="height" constant="47" id="WHI-ya-ERg"/>
@@ -853,6 +868,18 @@
                                     <action selector="actionLogin:" target="1Ph-sV-tBW" id="lOG-ZB-uUM"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4UR-Ol-gun">
+                                <rect key="frame" x="18" y="28" width="444" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="aPg-5p-fIu"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19" id="gSo-m2-n5I"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="looool" id="Kw1-Uw-iAx">
+                                    <font key="font" metaFont="system" size="16"/>
+                                    <color key="textColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="yFh-ta-NHM" secondAttribute="trailing" constant="135.5" id="1V0-eV-W0g"/>
@@ -861,14 +888,18 @@
                             <constraint firstItem="Gnm-xa-lDe" firstAttribute="centerX" secondItem="yFh-ta-NHM" secondAttribute="centerX" id="6NS-uZ-4PK"/>
                             <constraint firstItem="XvB-ag-r6a" firstAttribute="height" secondItem="yFh-ta-NHM" secondAttribute="height" id="GS0-MJ-I8Z"/>
                             <constraint firstItem="E64-9Y-DS3" firstAttribute="centerX" secondItem="XvB-ag-r6a" secondAttribute="centerX" id="Hff-Hh-fYK"/>
+                            <constraint firstAttribute="trailing" secondItem="4UR-Ol-gun" secondAttribute="trailing" constant="20" id="JlZ-eD-RFc"/>
                             <constraint firstItem="XvB-ag-r6a" firstAttribute="leading" secondItem="yFh-ta-NHM" secondAttribute="leading" id="PSJ-7U-Kvt"/>
                             <constraint firstItem="yFh-ta-NHM" firstAttribute="leading" secondItem="Kl1-Vk-1J2" secondAttribute="leading" constant="135.5" id="PeX-H0-Sqx"/>
-                            <constraint firstItem="yFh-ta-NHM" firstAttribute="centerY" secondItem="Kl1-Vk-1J2" secondAttribute="centerY" id="bce-Gv-y9p"/>
+                            <constraint firstItem="yFh-ta-NHM" firstAttribute="centerY" secondItem="Kl1-Vk-1J2" secondAttribute="centerY" constant="-32.5" id="bce-Gv-y9p"/>
                             <constraint firstItem="XvB-ag-r6a" firstAttribute="trailing" secondItem="yFh-ta-NHM" secondAttribute="trailing" id="cW0-6u-k6u"/>
+                            <constraint firstItem="4UR-Ol-gun" firstAttribute="top" secondItem="E64-9Y-DS3" secondAttribute="bottom" constant="20" id="e0T-LO-Eva"/>
+                            <constraint firstItem="4UR-Ol-gun" firstAttribute="leading" secondItem="Kl1-Vk-1J2" secondAttribute="leading" constant="20" id="hdW-ld-exR"/>
                             <constraint firstItem="yFh-ta-NHM" firstAttribute="top" secondItem="Gnm-xa-lDe" secondAttribute="bottom" constant="16" id="nSd-So-aOe"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="errorLabel" destination="4UR-Ol-gun" id="DTj-cQ-un1"/>
                         <outlet property="passwordTextField" destination="XvB-ag-r6a" id="ZPI-nU-Mvo"/>
                         <outlet property="signInButton" destination="E64-9Y-DS3" id="p06-mW-Zco"/>
                         <outlet property="usernameTextField" destination="yFh-ta-NHM" id="YPC-56-Ao6"/>

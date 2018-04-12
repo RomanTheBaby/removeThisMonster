@@ -10,10 +10,12 @@ import Cocoa
 import RealmSwift
 
 protocol UsersRealmProviderProtocol {
-    func saveUser(_ user: User)
+    func saveUser(_ user: User, completion: @escaping () -> Void, error: @escaping (Error) -> Void)
 }
 
 final class UsersRealmProvider: UsersRealmProviderProtocol {
+
+    static let SharedInstance: UsersRealmProviderProtocol = UsersRealmProvider()
 
     private let fileManager = FileManager.default
 
@@ -25,6 +27,8 @@ final class UsersRealmProvider: UsersRealmProviderProtocol {
             .appendingPathComponent("users")
             .appendingPathExtension("realm")
 
+        print(databaseFileUrl)
+
         let realmConfiguration = Realm.Configuration(fileURL: databaseFileUrl,
                                                      inMemoryIdentifier: nil,
                                                      syncConfiguration: nil,
@@ -34,7 +38,7 @@ final class UsersRealmProvider: UsersRealmProviderProtocol {
                                                      migrationBlock: nil,
                                                      deleteRealmIfMigrationNeeded: true,
                                                      shouldCompactOnLaunch: nil,
-                                                     objectTypes: [DBUser.self])
+                                                     objectTypes: [DBUser.self, DBCard.self])
 
         guard let realm = try? Realm(configuration: realmConfiguration) else { return nil }
         return realm
@@ -49,19 +53,27 @@ final class UsersRealmProvider: UsersRealmProviderProtocol {
         return user
     }
 
-    func saveUser(_ user: User) {
+    func saveUser(_ user: User, completion: @escaping () -> Void, error: @escaping (Error) -> Void) {
         guard let realm = realm() else { return }
+
+        guard realm.object(ofType: DBUser.self, forPrimaryKey: user.username) == nil else {
+            let err = NSError(domain: "com.alinka",
+                                code: 404,
+                                userInfo: [NSLocalizedDescriptionKey: "Користувач з таким імя вже існує!"])
+            error(err)
+            return
+        }
 
         realm.beginWrite()
 
-        let realmUser = realm.object(ofType: DBUser.self, forPrimaryKey: Int(user.created.timeIntervalSince1970)) ?? DBUser()
-
+        let realmUser = DBUser()
         realmUser.sync(domain: user)
 
         realm.add(realmUser)
 
         do {
             try realm.commitWrite()
+            print("DID write User")
         } catch let error {
             print("Error writing Down: ", error.localizedDescription)
         }

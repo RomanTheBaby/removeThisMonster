@@ -13,14 +13,19 @@ class DBUser: Object {
     @objc dynamic var created = 0
     @objc dynamic var username = ""
     @objc dynamic var password = ""
-    @objc dynamic var cards: [DBCard]?
+    var cards = RealmSwift.List<DBCard>()
+
+//    override static func primaryKey() -> String? {
+//        return "created"
+//    }
 
     override static func primaryKey() -> String? {
-        return "created"
+        return "username"
     }
 
     var asDomain: User {
-        let userCards = cards?.compactMap { $0.asDomain } ?? []
+
+        let userCards = Array(cards.map { $0.asDomain })
 
         let formattedDate = Date(timeIntervalSince1970: Double(created))
         return User(username: username, password: password, created: formattedDate, cards: userCards)
@@ -36,7 +41,7 @@ class DBUser: Object {
         username = domain.username
         password = domain.password
 
-        cards = domain.cards.compactMap { card -> DBCard in
+        let dbCards = domain.cards.compactMap { card -> DBCard in
             let dbCard = DBCard()
             dbCard.created = Int(card.created.timeIntervalSince1970)
             dbCard.desc = card.description
@@ -45,5 +50,8 @@ class DBUser: Object {
 
             return dbCard
         }
+
+        cards.append(contentsOf: dbCards)
+
     }
 }
