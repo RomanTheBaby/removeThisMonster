@@ -28,7 +28,7 @@ final class UsersRealmProvider: UsersRealmProviderProtocol {
             .appendingPathComponent("users")
             .appendingPathExtension("realm")
 
-        print(databaseFileUrl)
+        print("Users DB path: ", databaseFileUrl)
 
         let realmConfiguration = Realm.Configuration(fileURL: databaseFileUrl,
                                                      inMemoryIdentifier: nil,

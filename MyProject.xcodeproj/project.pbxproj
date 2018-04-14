@@ -30,6 +30,7 @@
 		09A1328620826D7E0029F526 /* ProjectItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A1328420826D7E0029F526 /* ProjectItem.xib */; };
 		09A1328A20826F5E0029F526 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1328820826F5E0029F526 /* Project.swift */; };
 		09A1328E20826F770029F526 /* DBProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1328C20826F770029F526 /* DBProject.swift */; };
+		09A132952082724A0029F526 /* ProdjectsRealmProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A132942082724A0029F526 /* ProdjectsRealmProvider.swift */; };
 		09CCA9C6207FF56A00AC5591 /* NSViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CCA9C4207FF56A00AC5591 /* NSViewController+Extensions.swift */; };
 		09CCA9C7207FF56A00AC5591 /* NSViewController+Extensions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09CCA9C5207FF56A00AC5591 /* NSViewController+Extensions.xib */; };
 /* End PBXBuildFile section */
@@ -74,6 +75,7 @@
 		09A1328420826D7E0029F526 /* ProjectItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectItem.xib; sourceTree = "<group>"; };
 		09A1328820826F5E0029F526 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		09A1328C20826F770029F526 /* DBProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBProject.swift; sourceTree = "<group>"; };
+		09A132942082724A0029F526 /* ProdjectsRealmProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdjectsRealmProvider.swift; sourceTree = "<group>"; };
 		09CCA9C4207FF56A00AC5591 /* NSViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+Extensions.swift"; sourceTree = "<group>"; };
 		09CCA9C5207FF56A00AC5591 /* NSViewController+Extensions.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "NSViewController+Extensions.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				0939DADF207D553600ABCBD4 /* UsersRealmProvider.swift */,
+				09A132942082724A0029F526 /* ProdjectsRealmProvider.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				0939DAFC207DE35900ABCBD4 /* NSColor+Extension.swift in Sources */,
 				09A1328E20826F770029F526 /* DBProject.swift in Sources */,
 				09CCA9C6207FF56A00AC5591 /* NSViewController+Extensions.swift in Sources */,
+				09A132952082724A0029F526 /* ProdjectsRealmProvider.swift in Sources */,
 				094CE9A72075438200FE361A /* AppDelegate.swift in Sources */,
 				0939DAE0207D553600ABCBD4 /* UsersRealmProvider.swift in Sources */,
 				0939DAED207D58B200ABCBD4 /* Card.swift in Sources */,

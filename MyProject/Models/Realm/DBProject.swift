@@ -23,11 +23,17 @@ class DBProject: Object {
     }
 
     func sync(domain: Project) {
-        if created != Int(domain.created.timeIntervalSince1970) {
+        if created != domain.created.asKey {
             // Realm throws fatalError if inserted object primary key is being changed, even if key is same
-            self.created = Int(domain.created.timeIntervalSince1970)
+            self.created = domain.created.asKey
         }
 
         name = domain.name
+    }
+}
+
+extension Date {
+    var asKey: Int {
+        return Int(self.timeIntervalSince1970)
     }
 }

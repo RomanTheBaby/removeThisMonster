@@ -33,9 +33,9 @@ class DBUser: Object {
 
     func sync(domain: User) {
 
-        if created != Int(domain.created.timeIntervalSince1970) {
+        if created != domain.created.asKey {
             // Realm throws fatalError if inserted object primary key is being changed, even if key is same
-            self.created = Int(domain.created.timeIntervalSince1970)
+            self.created = domain.created.asKey
         }
 
         username = domain.username
@@ -43,7 +43,7 @@ class DBUser: Object {
 
         let dbCards = domain.cards.compactMap { card -> DBCard in
             let dbCard = DBCard()
-            dbCard.created = Int(card.created.timeIntervalSince1970)
+            dbCard.created = card.created.asKey
             dbCard.desc = card.description
             dbCard.title = card.title
             dbCard.status = card.status.rawValue

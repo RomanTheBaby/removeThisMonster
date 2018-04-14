@@ -31,9 +31,9 @@ class DBCard: Object {
 
     func sync(domain: Card) {
 
-        if created != Int(domain.created.timeIntervalSince1970) {
+        if created != domain.created.asKey {
             // Realm throws fatalError if inserted object primary key is being changed, even if key is same
-            self.created = Int(domain.created.timeIntervalSince1970)
+            self.created = domain.created.asKey
         }
 
         desc = domain.description
