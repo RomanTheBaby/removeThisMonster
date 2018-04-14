@@ -25,6 +25,9 @@
 		094CE9AE2075438400FE361A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 094CE9AC2075438400FE361A /* Main.storyboard */; };
 		094CE9BA2075458900FE361A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094CE9B92075458900FE361A /* User.swift */; };
 		094CE9BE207545CB00FE361A /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094CE9BD207545CB00FE361A /* AuthViewController.swift */; };
+		09A1328120826AA30029F526 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1328020826AA30029F526 /* ProjectsViewController.swift */; };
+		09A1328520826D7E0029F526 /* ProjectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1328320826D7E0029F526 /* ProjectItem.swift */; };
+		09A1328620826D7E0029F526 /* ProjectItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A1328420826D7E0029F526 /* ProjectItem.xib */; };
 		09CCA9C6207FF56A00AC5591 /* NSViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CCA9C4207FF56A00AC5591 /* NSViewController+Extensions.swift */; };
 		09CCA9C7207FF56A00AC5591 /* NSViewController+Extensions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09CCA9C5207FF56A00AC5591 /* NSViewController+Extensions.xib */; };
 /* End PBXBuildFile section */
@@ -64,6 +67,9 @@
 		094CE9B02075438400FE361A /* MyProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyProject.entitlements; sourceTree = "<group>"; };
 		094CE9B92075458900FE361A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		094CE9BD207545CB00FE361A /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		09A1328020826AA30029F526 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
+		09A1328320826D7E0029F526 /* ProjectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectItem.swift; sourceTree = "<group>"; };
+		09A1328420826D7E0029F526 /* ProjectItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectItem.xib; sourceTree = "<group>"; };
 		09CCA9C4207FF56A00AC5591 /* NSViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+Extensions.swift"; sourceTree = "<group>"; };
 		09CCA9C5207FF56A00AC5591 /* NSViewController+Extensions.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "NSViewController+Extensions.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,6 +204,7 @@
 		094CE9BB207545B900FE361A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				09A1327F20826A450029F526 /* Projects */,
 				0939DAFD207DE60A00ABCBD4 /* Registration */,
 				094CE9BC207545C100FE361A /* Auth */,
 			);
@@ -210,6 +217,24 @@
 				094CE9BD207545CB00FE361A /* AuthViewController.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		09A1327F20826A450029F526 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				09A1328220826D6E0029F526 /* ProjectItem */,
+				09A1328020826AA30029F526 /* ProjectsViewController.swift */,
+			);
+			path = Projects;
+			sourceTree = "<group>";
+		};
+		09A1328220826D6E0029F526 /* ProjectItem */ = {
+			isa = PBXGroup;
+			children = (
+				09A1328320826D7E0029F526 /* ProjectItem.swift */,
+				09A1328420826D7E0029F526 /* ProjectItem.xib */,
+			);
+			path = ProjectItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +303,7 @@
 			files = (
 				09CCA9C7207FF56A00AC5591 /* NSViewController+Extensions.xib in Resources */,
 				094CE9AB2075438400FE361A /* Assets.xcassets in Resources */,
+				09A1328620826D7E0029F526 /* ProjectItem.xib in Resources */,
 				094CE9AE2075438400FE361A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,12 +321,14 @@
 				0939DAE0207D553600ABCBD4 /* UsersRealmProvider.swift in Sources */,
 				0939DAED207D58B200ABCBD4 /* Card.swift in Sources */,
 				094CE9BE207545CB00FE361A /* AuthViewController.swift in Sources */,
+				09A1328120826AA30029F526 /* ProjectsViewController.swift in Sources */,
 				094CE9BA2075458900FE361A /* User.swift in Sources */,
 				0939DAFF207DE61E00ABCBD4 /* RegistrationViewController.swift in Sources */,
 				0939DAE8207D57EE00ABCBD4 /* DBUser.swift in Sources */,
 				0939DAEA207D588600ABCBD4 /* CardStatus.swift in Sources */,
 				0939DAFA207D688D00ABCBD4 /* NSView+Extension.swift in Sources */,
 				0939DAEF207D58DA00ABCBD4 /* DBCard.swift in Sources */,
+				09A1328520826D7E0029F526 /* ProjectItem.swift in Sources */,
 				0939DAF1207D5F9E00ABCBD4 /* AuthInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

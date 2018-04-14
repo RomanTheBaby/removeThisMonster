@@ -15,6 +15,8 @@ class AuthViewController: NSViewController {
     @IBOutlet weak private var signInButton: NSButton!
     @IBOutlet weak private var errorLabel: NSTextField!
 
+    private let SegueIdentifier = "ProdjectFromAuth"
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -65,7 +67,7 @@ class AuthViewController: NSViewController {
                 return
         }
 
-        print("Користувач існує")
+        self.performSegue(withIdentifier: NSStoryboardSegue.Identifier(SegueIdentifier), sender: nil)
     }
 
     private func showMessage(_ message: String) {

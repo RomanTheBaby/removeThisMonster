@@ -15,6 +15,8 @@ class RegistrationViewController: NSViewController {
     @IBOutlet weak private var signInButton: NSButton!
     @IBOutlet weak private var errorLabel: NSTextField!
 
+    private let SegueIdentifier = "ProdjectFromRegistration"
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -59,7 +61,7 @@ class RegistrationViewController: NSViewController {
 
         let user = User(username: username, password: password, created: Date(), cards: [])
         UsersRealmProvider.SharedInstance.saveUser(user, completion: {
-            print("Saved")
+            self.performSegue(withIdentifier: NSStoryboardSegue.Identifier(self.SegueIdentifier), sender: nil)
         }) { (error) in
             self.showMessage(error.localizedDescription)
         }

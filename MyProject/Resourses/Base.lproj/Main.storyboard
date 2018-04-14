@@ -678,7 +678,7 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="-167"/>
+            <point key="canvasLocation" x="75" y="450"/>
         </scene>
         <!--Увійти-->
         <scene sceneID="hIz-AP-VOD">
@@ -775,11 +775,85 @@
                         <outlet property="passwordTextField" destination="UaF-PM-f1P" id="yee-CG-Qm5"/>
                         <outlet property="signInButton" destination="QNf-Is-GDB" id="Jhh-sK-vso"/>
                         <outlet property="usernameTextField" destination="e18-8I-naG" id="V4D-U6-S8B"/>
+                        <segue destination="b5D-1X-ehX" kind="show" identifier="ProdjectFromAuth" id="QrJ-Ys-gvT"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-277" y="1192"/>
+        </scene>
+        <!--Projects View Controller-->
+        <scene sceneID="zYu-YK-5mQ">
+            <objects>
+                <viewController id="b5D-1X-ehX" customClass="ProjectsViewController" customModule="MyProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Kge-YV-Shq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Rbp-P7-JsX">
+                                <rect key="frame" x="265" y="358" width="70" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="M3g-it-rr5"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Проекти" id="joV-7B-flZ">
+                                    <font key="font" size="17" name="Impact"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <scrollView wantsLayer="YES" borderType="groove" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTa-Bc-uzY">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="358"/>
+                                <clipView key="contentView" id="ujn-PX-ARz">
+                                    <rect key="frame" x="2" y="2" width="596" height="354"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView id="Zaa-WW-FAe">
+                                            <rect key="frame" x="0.0" y="0.0" width="596" height="158"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="U4q-MB-vgN">
+                                                <size key="itemSize" width="50" height="50"/>
+                                            </collectionViewFlowLayout>
+                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </collectionView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.070588235294117646" green="0.47843137254901957" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="zVz-EY-D2X">
+                                    <rect key="frame" x="2" y="340" width="596" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Ey1-7v-QDF">
+                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dGM-sN-OCh">
+                                <rect key="frame" x="450" y="353" width="136" height="32"/>
+                                <buttonCell key="cell" type="push" title="Додати Проект" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9cZ-iB-vbd">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Rbp-P7-JsX" firstAttribute="centerX" secondItem="Kge-YV-Shq" secondAttribute="centerX" id="9Gx-AZ-8wZ"/>
+                            <constraint firstItem="dGM-sN-OCh" firstAttribute="centerY" secondItem="Rbp-P7-JsX" secondAttribute="centerY" id="AMD-aO-QjI"/>
+                            <constraint firstItem="yTa-Bc-uzY" firstAttribute="top" secondItem="Rbp-P7-JsX" secondAttribute="bottom" id="EgX-tB-su7"/>
+                            <constraint firstItem="yTa-Bc-uzY" firstAttribute="leading" secondItem="Kge-YV-Shq" secondAttribute="leading" id="GC6-fe-NDe"/>
+                            <constraint firstAttribute="trailing" secondItem="yTa-Bc-uzY" secondAttribute="trailing" id="J8t-C3-pai"/>
+                            <constraint firstAttribute="trailing" secondItem="dGM-sN-OCh" secondAttribute="trailing" constant="20" id="Ohi-t1-7rV"/>
+                            <constraint firstAttribute="bottom" secondItem="yTa-Bc-uzY" secondAttribute="bottom" id="a5l-iZ-rjb"/>
+                            <constraint firstItem="Rbp-P7-JsX" firstAttribute="top" secondItem="Kge-YV-Shq" secondAttribute="top" constant="16" id="hFC-fe-W7n"/>
+                            <constraint firstItem="yTa-Bc-uzY" firstAttribute="top" secondItem="dGM-sN-OCh" secondAttribute="bottom" constant="2" id="zJb-yF-n3e"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="yTa-Bc-uzY" id="FUd-wk-tGx"/>
+                    </connections>
+                </viewController>
+                <customObject id="vKQ-kf-0hV" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="45" y="1731"/>
         </scene>
         <!--Tab View Controller-->
         <scene sceneID="qv1-fq-rGg">
@@ -903,6 +977,7 @@
                         <outlet property="passwordTextField" destination="XvB-ag-r6a" id="ZPI-nU-Mvo"/>
                         <outlet property="signInButton" destination="E64-9Y-DS3" id="p06-mW-Zco"/>
                         <outlet property="usernameTextField" destination="yFh-ta-NHM" id="YPC-56-Ao6"/>
+                        <segue destination="b5D-1X-ehX" kind="show" identifier="ProdjectFromRegistration" id="BW3-6q-2KR"/>
                     </connections>
                 </viewController>
                 <customObject id="8TM-VQ-Pzf" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1172,4 +1247,7 @@ AAAAAAAcgQ
 </mutableData>
         </image>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="BW3-6q-2KR"/>
+    </inferredMetricsTieBreakers>
 </document>
