@@ -28,6 +28,8 @@
 		09A1328120826AA30029F526 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1328020826AA30029F526 /* ProjectsViewController.swift */; };
 		09A1328520826D7E0029F526 /* ProjectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1328320826D7E0029F526 /* ProjectItem.swift */; };
 		09A1328620826D7E0029F526 /* ProjectItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A1328420826D7E0029F526 /* ProjectItem.xib */; };
+		09A1328A20826F5E0029F526 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1328820826F5E0029F526 /* Project.swift */; };
+		09A1328E20826F770029F526 /* DBProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1328C20826F770029F526 /* DBProject.swift */; };
 		09CCA9C6207FF56A00AC5591 /* NSViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CCA9C4207FF56A00AC5591 /* NSViewController+Extensions.swift */; };
 		09CCA9C7207FF56A00AC5591 /* NSViewController+Extensions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09CCA9C5207FF56A00AC5591 /* NSViewController+Extensions.xib */; };
 /* End PBXBuildFile section */
@@ -70,6 +72,8 @@
 		09A1328020826AA30029F526 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		09A1328320826D7E0029F526 /* ProjectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectItem.swift; sourceTree = "<group>"; };
 		09A1328420826D7E0029F526 /* ProjectItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectItem.xib; sourceTree = "<group>"; };
+		09A1328820826F5E0029F526 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		09A1328C20826F770029F526 /* DBProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBProject.swift; sourceTree = "<group>"; };
 		09CCA9C4207FF56A00AC5591 /* NSViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+Extensions.swift"; sourceTree = "<group>"; };
 		09CCA9C5207FF56A00AC5591 /* NSViewController+Extensions.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "NSViewController+Extensions.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,6 +111,7 @@
 		0939DAE6207D57E500ABCBD4 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				09A1328C20826F770029F526 /* DBProject.swift */,
 				0939DAE7207D57EE00ABCBD4 /* DBUser.swift */,
 				0939DAEE207D58DA00ABCBD4 /* DBCard.swift */,
 			);
@@ -185,6 +190,7 @@
 		094CE9B62075456C00FE361A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				09A1328720826F560029F526 /* Project */,
 				0939DAEB207D58A600ABCBD4 /* Cards */,
 				0939DAE6207D57E500ABCBD4 /* Realm */,
 				094CE9B82075457F00FE361A /* User */,
@@ -235,6 +241,14 @@
 				09A1328420826D7E0029F526 /* ProjectItem.xib */,
 			);
 			path = ProjectItem;
+			sourceTree = "<group>";
+		};
+		09A1328720826F560029F526 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				09A1328820826F5E0029F526 /* Project.swift */,
+			);
+			path = Project;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0939DAFC207DE35900ABCBD4 /* NSColor+Extension.swift in Sources */,
+				09A1328E20826F770029F526 /* DBProject.swift in Sources */,
 				09CCA9C6207FF56A00AC5591 /* NSViewController+Extensions.swift in Sources */,
 				094CE9A72075438200FE361A /* AppDelegate.swift in Sources */,
 				0939DAE0207D553600ABCBD4 /* UsersRealmProvider.swift in Sources */,
@@ -330,6 +345,7 @@
 				0939DAEF207D58DA00ABCBD4 /* DBCard.swift in Sources */,
 				09A1328520826D7E0029F526 /* ProjectItem.swift in Sources */,
 				0939DAF1207D5F9E00ABCBD4 /* AuthInfo.swift in Sources */,
+				09A1328A20826F5E0029F526 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
