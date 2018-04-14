@@ -12,5 +12,6 @@ struct Card {
     var title: String
     var status: CardStatus
     var created: Date
+    var projectId: Int
     var description: String
 }

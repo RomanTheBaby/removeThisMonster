@@ -75,9 +75,10 @@ final class UsersRealmProvider: UsersRealmProviderProtocol {
 
         do {
             try realm.commitWrite()
-            print("DID write User")
-        } catch let error {
-            print("Error writing Down: ", error.localizedDescription)
+            completion()
+        } catch let err {
+            error(err)
+            print("Error writing Down: ", err.localizedDescription)
         }
     }
 }

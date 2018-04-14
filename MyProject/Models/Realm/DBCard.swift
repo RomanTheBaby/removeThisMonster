@@ -13,6 +13,7 @@ class DBCard: Object {
     @objc dynamic var created = 0
     @objc dynamic var desc = ""
     @objc dynamic var title = ""
+    @objc dynamic var projectID = 0
     @objc dynamic var status = CardStatus.toDo.rawValue
 
     override static func primaryKey() -> String? {
@@ -24,7 +25,7 @@ class DBCard: Object {
         let formattedDate = Date(timeIntervalSince1970: Double(created))
 
         let card = Card(title: title, status: cardStatus,
-                        created: formattedDate, description: desc)
+                        created: formattedDate, projectId: projectID, description: desc)
         return card
     }
 
@@ -37,6 +38,7 @@ class DBCard: Object {
 
         desc = domain.description
         title = domain.title
+        projectID = domain.projectId
         status = domain.status.rawValue
     }
 }
