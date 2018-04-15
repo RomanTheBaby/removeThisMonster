@@ -11,6 +11,7 @@ import Cocoa
 final class ProdjectAlertView: NSView, NibInitializable {
 
     var completion: ((String) -> Void)?
+    var error: ((Error) -> Void)?
     var dismiss: (() -> Void)?
 
     @IBOutlet weak private var nameTextField: NSTextField!
@@ -37,6 +38,12 @@ final class ProdjectAlertView: NSView, NibInitializable {
 
     private func createProdject(named name: String) {
         guard !name.isEmpty else { dismiss?(); return }
+        let project = Project(created: Date(), name: name)
+        ProdjectsRealmProvider.SharedInstance.saveProdject(project, completion: {
+            print("Project created")
+        }) { [weak self] (err) in
+            self?.error?(err)
+        }
         completion?(name)
     }
 }

@@ -21,6 +21,14 @@ class ProjectsViewController: NSViewController {
             self.addingAlertView.removeFromSuperview()
         }
 
+        addingAlertView.completion = { projectName in
+            print("Did create project with name: ", projectName)
+        }
+
+        addingAlertView.error = { error in
+            self.showAlert(for: error)
+        }
+
         configureAppearence()
         configureLayout()
     }

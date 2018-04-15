@@ -11,6 +11,7 @@ import RealmSwift
 
 protocol ProdjectsRealmProviderProtocol {
     func fetchAllProdjects() -> [Project]
+    func saveProdject(_ prodject: Project, completion: @escaping () -> Void, error: @escaping (Error) -> Void)
 }
 
 final class ProdjectsRealmProvider: ProdjectsRealmProviderProtocol {
@@ -60,5 +61,11 @@ final class ProdjectsRealmProvider: ProdjectsRealmProviderProtocol {
         dbProdject.sync(domain: prodject)
 
         realm.add(dbProdject, update: true)
+
+        do {
+            try realm.commitWrite()
+        } catch let err {
+            print("Error saving Project: \(prodject.name), because: ", err.localizedDescription)
+        }
     }
 }
