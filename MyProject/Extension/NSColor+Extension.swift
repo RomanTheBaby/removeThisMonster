@@ -20,4 +20,8 @@ extension NSColor {
     class var lightGreen: NSColor {
         return NSColor(red: 95/255, green: 179/255, blue: 81/255, alpha: 1.0)
     }
+
+    class var coolPurple: NSColor {
+        return NSColor(red: 125/255, green: 22/255, blue: 126/255, alpha: 1.0)
+    }
 }

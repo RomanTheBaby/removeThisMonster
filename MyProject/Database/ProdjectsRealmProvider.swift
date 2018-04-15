@@ -71,6 +71,13 @@ final class ProdjectsRealmProvider: ProdjectsRealmProviderProtocol {
 
         let dbProdject = realm.object(ofType: DBProject.self, forPrimaryKey: prodject.created.asKey) ?? DBProject()
 
+        guard prodject.name != dbProdject.name else {
+            realm.cancelWrite();
+            let err = NSError(domain: "com.domain", code: 404, userInfo: [NSLocalizedDescriptionKey: "Проект з таким ім'ям уже існує!"])
+            error(err)
+            return
+        }
+
         dbProdject.sync(domain: prodject)
 
         realm.add(dbProdject, update: true)
