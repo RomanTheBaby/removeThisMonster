@@ -787,11 +787,11 @@
             <objects>
                 <viewController id="b5D-1X-ehX" customClass="ProjectsViewController" customModule="MyProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Kge-YV-Shq">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Rbp-P7-JsX">
-                                <rect key="frame" x="265" y="358" width="70" height="26"/>
+                                <rect key="frame" x="365" y="558" width="70" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="M3g-it-rr5"/>
                                 </constraints>
@@ -801,14 +801,14 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <scrollView wantsLayer="YES" borderType="groove" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTa-Bc-uzY">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="358"/>
-                                <clipView key="contentView" id="ujn-PX-ARz">
-                                    <rect key="frame" x="2" y="2" width="596" height="354"/>
+                            <scrollView wantsLayer="YES" borderType="groove" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTa-Bc-uzY">
+                                <rect key="frame" x="0.0" y="0.0" width="800" height="558"/>
+                                <clipView key="contentView" drawsBackground="NO" id="ujn-PX-ARz">
+                                    <rect key="frame" x="2" y="2" width="796" height="554"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="Zaa-WW-FAe">
-                                            <rect key="frame" x="0.0" y="0.0" width="596" height="158"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="796" height="554"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="U4q-MB-vgN">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -819,20 +819,23 @@
                                     <color key="backgroundColor" red="0.070588235294117646" green="0.47843137254901957" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="zVz-EY-D2X">
-                                    <rect key="frame" x="2" y="340" width="596" height="16"/>
+                                    <rect key="frame" x="-100" y="-100" width="596" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Ey1-7v-QDF">
-                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <rect key="frame" x="582" y="2" width="16" height="554"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dGM-sN-OCh">
-                                <rect key="frame" x="450" y="353" width="136" height="32"/>
+                                <rect key="frame" x="650" y="553" width="136" height="32"/>
                                 <buttonCell key="cell" type="push" title="Додати Проект" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9cZ-iB-vbd">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="actionAddProdject:" target="b5D-1X-ehX" id="B4n-be-nXF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -853,7 +856,7 @@
                 </viewController>
                 <customObject id="vKQ-kf-0hV" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="45" y="1731"/>
+            <point key="canvasLocation" x="44" y="1832"/>
         </scene>
         <!--Tab View Controller-->
         <scene sceneID="qv1-fq-rGg">

@@ -31,6 +31,9 @@
 		09A1328A20826F5E0029F526 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1328820826F5E0029F526 /* Project.swift */; };
 		09A1328E20826F770029F526 /* DBProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1328C20826F770029F526 /* DBProject.swift */; };
 		09A132952082724A0029F526 /* ProdjectsRealmProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A132942082724A0029F526 /* ProdjectsRealmProvider.swift */; };
+		09A13297208275C90029F526 /* ProdjectAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A13296208275C90029F526 /* ProdjectAlertView.xib */; };
+		09A13299208276AA0029F526 /* ProdjectAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A13298208276AA0029F526 /* ProdjectAlertView.swift */; };
+		09BBDD9B20836524005975CE /* NibInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BBDD9A20836524005975CE /* NibInitializable.swift */; };
 		09CCA9C6207FF56A00AC5591 /* NSViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CCA9C4207FF56A00AC5591 /* NSViewController+Extensions.swift */; };
 		09CCA9C7207FF56A00AC5591 /* NSViewController+Extensions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09CCA9C5207FF56A00AC5591 /* NSViewController+Extensions.xib */; };
 /* End PBXBuildFile section */
@@ -76,6 +79,9 @@
 		09A1328820826F5E0029F526 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		09A1328C20826F770029F526 /* DBProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBProject.swift; sourceTree = "<group>"; };
 		09A132942082724A0029F526 /* ProdjectsRealmProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdjectsRealmProvider.swift; sourceTree = "<group>"; };
+		09A13296208275C90029F526 /* ProdjectAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProdjectAlertView.xib; sourceTree = "<group>"; };
+		09A13298208276AA0029F526 /* ProdjectAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdjectAlertView.swift; sourceTree = "<group>"; };
+		09BBDD9A20836524005975CE /* NibInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibInitializable.swift; sourceTree = "<group>"; };
 		09CCA9C4207FF56A00AC5591 /* NSViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+Extensions.swift"; sourceTree = "<group>"; };
 		09CCA9C5207FF56A00AC5591 /* NSViewController+Extensions.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "NSViewController+Extensions.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,6 +185,7 @@
 		094CE9A52075438200FE361A /* MyProject */ = {
 			isa = PBXGroup;
 			children = (
+				09BBDD9920836514005975CE /* Protocols */,
 				0939DAF8207D688000ABCBD4 /* Extension */,
 				0939DAF7207D64B800ABCBD4 /* Resourses */,
 				0939DADE207D551D00ABCBD4 /* Database */,
@@ -232,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				09A1328220826D6E0029F526 /* ProjectItem */,
+				09A1329B208276B30029F526 /* ProdjectAlert */,
 				09A1328020826AA30029F526 /* ProjectsViewController.swift */,
 			);
 			path = Projects;
@@ -252,6 +260,23 @@
 				09A1328820826F5E0029F526 /* Project.swift */,
 			);
 			path = Project;
+			sourceTree = "<group>";
+		};
+		09A1329B208276B30029F526 /* ProdjectAlert */ = {
+			isa = PBXGroup;
+			children = (
+				09A13298208276AA0029F526 /* ProdjectAlertView.swift */,
+				09A13296208275C90029F526 /* ProdjectAlertView.xib */,
+			);
+			path = ProdjectAlert;
+			sourceTree = "<group>";
+		};
+		09BBDD9920836514005975CE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				09BBDD9A20836524005975CE /* NibInitializable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +343,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09A13297208275C90029F526 /* ProdjectAlertView.xib in Resources */,
 				09CCA9C7207FF56A00AC5591 /* NSViewController+Extensions.xib in Resources */,
 				094CE9AB2075438400FE361A /* Assets.xcassets in Resources */,
 				09A1328620826D7E0029F526 /* ProjectItem.xib in Resources */,
@@ -340,6 +366,7 @@
 				0939DAE0207D553600ABCBD4 /* UsersRealmProvider.swift in Sources */,
 				0939DAED207D58B200ABCBD4 /* Card.swift in Sources */,
 				094CE9BE207545CB00FE361A /* AuthViewController.swift in Sources */,
+				09A13299208276AA0029F526 /* ProdjectAlertView.swift in Sources */,
 				09A1328120826AA30029F526 /* ProjectsViewController.swift in Sources */,
 				094CE9BA2075458900FE361A /* User.swift in Sources */,
 				0939DAFF207DE61E00ABCBD4 /* RegistrationViewController.swift in Sources */,
@@ -350,6 +377,7 @@
 				09A1328520826D7E0029F526 /* ProjectItem.swift in Sources */,
 				0939DAF1207D5F9E00ABCBD4 /* AuthInfo.swift in Sources */,
 				09A1328A20826F5E0029F526 /* Project.swift in Sources */,
+				09BBDD9B20836524005975CE /* NibInitializable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
