@@ -7,7 +7,6 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ProjectItem" customModule="MyProject" customModuleProvider="target">
             <connections>
-                <outlet property="projectNameLabel" destination="7vO-Uv-W1O" id="M9W-bK-R2L"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -18,9 +17,9 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7vO-Uv-W1O">
-                    <rect key="frame" x="18" y="222" width="444" height="30"/>
+                    <rect key="frame" x="18" y="228" width="444" height="24"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Project Name" id="oVW-bX-NSN">
-                        <font key="font" metaFont="system" size="25"/>
+                        <font key="font" metaFont="system" size="20"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -32,5 +31,11 @@
                 <constraint firstAttribute="trailing" secondItem="7vO-Uv-W1O" secondAttribute="trailing" constant="20" id="pvr-fl-kit"/>
             </constraints>
         </customView>
+        <collectionViewItem id="XQh-eQ-PdU" customClass="ProjectItem" customModule="MyProject" customModuleProvider="target">
+            <connections>
+                <outlet property="projectNameLabel" destination="7vO-Uv-W1O" id="PhR-oG-TQa"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="kw0-rh-XN4"/>
+            </connections>
+        </collectionViewItem>
     </objects>
 </document>

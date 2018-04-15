@@ -10,9 +10,13 @@ import Cocoa
 
 class ProjectsViewController: NSViewController {
 
-    @IBOutlet weak private var collectionView: NSScrollView!
+    @IBOutlet weak private var collectionView: NSCollectionView!
 
     private let addingAlertView = ProdjectAlertView.instantiateFromNib()
+
+    private var projects: [Project] {
+        return ProdjectsRealmProvider.SharedInstance.fetchAllProdjects()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +25,14 @@ class ProjectsViewController: NSViewController {
             self.addingAlertView.removeFromSuperview()
         }
 
-        addingAlertView.completion = { projectName in
-            print("Did create project with name: ", projectName)
+        addingAlertView.completion = {
+            self.addingAlertView.removeFromSuperview()
+            self.collectionView.reloadData()
         }
 
         addingAlertView.error = { error in
+            self.addingAlertView.removeFromSuperview()
+
             self.showAlert(for: error)
         }
 
@@ -43,10 +50,17 @@ class ProjectsViewController: NSViewController {
 
     private func configureLayout() {
         let flowLayout = NSCollectionViewFlowLayout()
-        flowLayout.itemSize = NSSize(width: 160.0, height: 140.0)
-        flowLayout.sectionInset = NSEdgeInsetsMake(10.0, 20.0, 10.0, 20.0)
-        flowLayout.minimumInteritemSpacing = 20.0
-        flowLayout.minimumLineSpacing = 20.0
+        flowLayout.itemSize = NSSize(width: 250, height: 140.0)
+        flowLayout.sectionInset = NSEdgeInsetsMake(10.0, 5.0, 10.0, 5.0)
+        flowLayout.minimumInteritemSpacing = 5.0
+        flowLayout.minimumLineSpacing = 5.0
+        collectionView.collectionViewLayout = flowLayout
+        collectionView.layer?.backgroundColor = NSColor.blue.cgColor
+    }
+
+    @IBAction func actionDeleteAll(_ sender: NSButton) {
+        ProdjectsRealmProvider.SharedInstance.removeAllProjects()
+        collectionView.reloadData()
     }
 
     @IBAction private func actionAddProdject(_ sender: NSButton) {
@@ -61,8 +75,21 @@ class ProjectsViewController: NSViewController {
     }
 }
 
-//extension ProjectsViewController: NSCollectionViewDataSource {
-//    func numberOfSections(in collectionView: NSCollectionView) -> Int {
-//        return 0
-//    }
-//}
+extension ProjectsViewController: NSCollectionViewDataSource {
+    func numberOfSections(in collectionView: NSCollectionView) -> Int {
+        return 1
+    }
+
+    func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
+        return projects.count
+    }
+
+    func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
+        let projectItem = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "ProjectItem"), for: indexPath) as! ProjectItem
+
+        let project = projects[indexPath.item]
+        projectItem.setProjectName(project.name)
+
+        return projectItem
+    }
+}

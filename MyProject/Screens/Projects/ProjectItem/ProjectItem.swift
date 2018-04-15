@@ -17,6 +17,8 @@ class ProjectItem: NSCollectionViewItem {
 
         view.wantsLayer = true
         view.layer?.backgroundColor = NSColor(red: 125/255, green: 22/255, blue: 126/255, alpha: 1.0).cgColor
+
+        view.layer?.cornerRadius = 10
     }
 
     func setProjectName(_ name: String) {

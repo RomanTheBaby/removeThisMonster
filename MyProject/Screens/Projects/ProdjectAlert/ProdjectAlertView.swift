@@ -10,7 +10,7 @@ import Cocoa
 
 final class ProdjectAlertView: NSView, NibInitializable {
 
-    var completion: ((String) -> Void)?
+    var completion: (() -> Void)?
     var error: ((Error) -> Void)?
     var dismiss: (() -> Void)?
 
@@ -39,11 +39,11 @@ final class ProdjectAlertView: NSView, NibInitializable {
     private func createProdject(named name: String) {
         guard !name.isEmpty else { dismiss?(); return }
         let project = Project(created: Date(), name: name)
-        ProdjectsRealmProvider.SharedInstance.saveProdject(project, completion: {
+        ProdjectsRealmProvider.SharedInstance.saveProdject(project, completion: { [weak self] in
             print("Project created")
+            self?.completion?()
         }) { [weak self] (err) in
             self?.error?(err)
         }
-        completion?(name)
     }
 }

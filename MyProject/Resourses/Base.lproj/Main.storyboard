@@ -814,6 +814,10 @@
                                                 <size key="itemSize" width="50" height="50"/>
                                             </collectionViewFlowLayout>
                                             <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <outlet property="dataSource" destination="b5D-1X-ehX" id="XWo-K5-f5F"/>
+                                                <outlet property="delegate" destination="b5D-1X-ehX" id="y38-Dv-fgo"/>
+                                            </connections>
                                         </collectionView>
                                     </subviews>
                                     <color key="backgroundColor" red="0.070588235294117646" green="0.47843137254901957" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -837,13 +841,25 @@
                                     <action selector="actionAddProdject:" target="b5D-1X-ehX" id="B4n-be-nXF"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XKo-uP-9tr">
+                                <rect key="frame" x="14" y="553" width="123" height="32"/>
+                                <buttonCell key="cell" type="push" title="Видалити усі" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fu2-UC-LKr">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="actionDeleteAll:" target="b5D-1X-ehX" id="iak-tn-eGY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="XKo-uP-9tr" firstAttribute="leading" secondItem="Kge-YV-Shq" secondAttribute="leading" constant="20" id="6Hk-02-sEm"/>
                             <constraint firstItem="Rbp-P7-JsX" firstAttribute="centerX" secondItem="Kge-YV-Shq" secondAttribute="centerX" id="9Gx-AZ-8wZ"/>
                             <constraint firstItem="dGM-sN-OCh" firstAttribute="centerY" secondItem="Rbp-P7-JsX" secondAttribute="centerY" id="AMD-aO-QjI"/>
                             <constraint firstItem="yTa-Bc-uzY" firstAttribute="top" secondItem="Rbp-P7-JsX" secondAttribute="bottom" id="EgX-tB-su7"/>
                             <constraint firstItem="yTa-Bc-uzY" firstAttribute="leading" secondItem="Kge-YV-Shq" secondAttribute="leading" id="GC6-fe-NDe"/>
                             <constraint firstAttribute="trailing" secondItem="yTa-Bc-uzY" secondAttribute="trailing" id="J8t-C3-pai"/>
+                            <constraint firstItem="yTa-Bc-uzY" firstAttribute="top" secondItem="XKo-uP-9tr" secondAttribute="bottom" constant="2" id="Lip-fM-Axo"/>
                             <constraint firstAttribute="trailing" secondItem="dGM-sN-OCh" secondAttribute="trailing" constant="20" id="Ohi-t1-7rV"/>
                             <constraint firstAttribute="bottom" secondItem="yTa-Bc-uzY" secondAttribute="bottom" id="a5l-iZ-rjb"/>
                             <constraint firstItem="Rbp-P7-JsX" firstAttribute="top" secondItem="Kge-YV-Shq" secondAttribute="top" constant="16" id="hFC-fe-W7n"/>
@@ -851,7 +867,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="yTa-Bc-uzY" id="FUd-wk-tGx"/>
+                        <outlet property="collectionView" destination="Zaa-WW-FAe" id="tbh-Qf-VFl"/>
                     </connections>
                 </viewController>
                 <customObject id="vKQ-kf-0hV" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

@@ -10,6 +10,7 @@ import Cocoa
 import RealmSwift
 
 protocol ProdjectsRealmProviderProtocol {
+    func removeAllProjects()
     func fetchAllProdjects() -> [Project]
     func saveProdject(_ prodject: Project, completion: @escaping () -> Void, error: @escaping (Error) -> Void)
 }
@@ -45,6 +46,18 @@ final class ProdjectsRealmProvider: ProdjectsRealmProviderProtocol {
         return realm
     }
 
+    func removeAllProjects() {
+        guard let realm = realm() else { return }
+        realm.beginWrite()
+        realm.deleteAll()
+
+        do {
+            try realm.commitWrite()
+        } catch {
+            print("Error removing all Projects")
+        }
+    }
+
     func fetchAllProdjects() -> [Project] {
         guard let realm = realm() else { return [] }
         let objects = Array(realm.objects(DBProject.self))
@@ -64,8 +77,9 @@ final class ProdjectsRealmProvider: ProdjectsRealmProviderProtocol {
 
         do {
             try realm.commitWrite()
+            completion()
         } catch let err {
-            print("Error saving Project: \(prodject.name), because: ", err.localizedDescription)
+            error(err)
         }
     }
 }
