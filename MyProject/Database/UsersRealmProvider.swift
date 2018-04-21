@@ -10,6 +10,7 @@ import Cocoa
 import RealmSwift
 
 protocol UsersRealmProviderProtocol {
+    func cards(for project: Project) -> [Card]
     func retriveUser(with authInfo: AuthInfo) -> User?
     func saveUser(_ user: User, completion: @escaping () -> Void, error: @escaping (Error) -> Void)
 }
@@ -43,6 +44,15 @@ final class UsersRealmProvider: UsersRealmProviderProtocol {
 
         guard let realm = try? Realm(configuration: realmConfiguration) else { return nil }
         return realm
+    }
+
+    func cards(for project: Project) -> [Card] {
+        guard let realm = realm() else { return [] }
+        let allObjects = realm.objects(DBCard.self)
+            .filter { $0.projectID == project.created.asKey }
+            .map { $0.asDomain }
+
+        return Array(allObjects)
     }
 
     func retriveUser(with authInfo: AuthInfo) -> User? {
