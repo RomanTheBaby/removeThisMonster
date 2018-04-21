@@ -14,7 +14,7 @@ final class ProdjectAlertView: NSView, NibInitializable {
     var error: ((Error) -> Void)?
     var dismiss: (() -> Void)?
 
-    @IBOutlet weak private var nameTextField: NSTextField!
+    @IBOutlet weak var nameTextField: NSTextField!
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
@@ -38,7 +38,7 @@ final class ProdjectAlertView: NSView, NibInitializable {
 
     private func createProdject(named name: String) {
         guard !name.isEmpty else { dismiss?(); return }
-        let project = Project(created: Date(), name: name)
+        let project = Project(projName: name)
         ProdjectsRealmProvider.SharedInstance.saveProdject(project, completion: { [weak self] in
             print("Project created")
             self?.completion?()

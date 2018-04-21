@@ -29,8 +29,6 @@ final class ProdjectsRealmProvider: ProdjectsRealmProviderProtocol {
             .appendingPathComponent("prodjects")
             .appendingPathExtension("realm")
 
-        print("Prodjects DB path: ", databaseFileUrl)
-
         let realmConfiguration = Realm.Configuration(fileURL: databaseFileUrl,
                                                      inMemoryIdentifier: nil,
                                                      syncConfiguration: nil,

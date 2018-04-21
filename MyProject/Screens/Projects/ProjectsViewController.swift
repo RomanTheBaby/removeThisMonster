@@ -14,6 +14,9 @@ class ProjectsViewController: NSViewController {
 
     private let addingAlertView = ProdjectAlertView.instantiateFromNib()
 
+    private let SegueIdentifier = "ShowProject"
+    private var selectedProject: Project?
+
     private var projects: [Project] {
         return ProdjectsRealmProvider.SharedInstance.fetchAllProdjects()
     }
@@ -68,10 +71,17 @@ class ProjectsViewController: NSViewController {
 
         view.addSubview(addingAlertView)
 
+        addingAlertView.nameTextField.stringValue = ""
+
         var currentFrame = addingAlertView.frame
         currentFrame.origin.x = NSMidX(view.frame) - currentFrame.width / 2.0
         currentFrame.origin.y = NSMidY(view.frame) - currentFrame.height / 2.0
         addingAlertView.frame = currentFrame
+    }
+
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        guard let viewController = segue.destinationController as? ProjectDetailViewController else { return }
+        viewController.project = selectedProject
     }
 }
 
@@ -88,8 +98,16 @@ extension ProjectsViewController: NSCollectionViewDataSource {
         let projectItem = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "ProjectItem"), for: indexPath) as! ProjectItem
 
         let project = projects[indexPath.item]
-        projectItem.setProjectName(project.name)
+        projectItem.setProject(project)
 
         return projectItem
+    }
+}
+
+extension ProjectsViewController: NSCollectionViewDelegate {
+    func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+        guard let indexPath = indexPaths.first else { return }
+        selectedProject = projects[indexPath.item]
+        self.performSegue(withIdentifier: NSStoryboardSegue.Identifier(self.SegueIdentifier), sender: nil)
     }
 }

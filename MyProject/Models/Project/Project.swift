@@ -11,4 +11,13 @@ import Cocoa
 struct Project {
     var created: Date
     var name: String
+    var color: NSColor
+}
+
+extension Project {
+    init(date: Date = Date(), projName: String) {
+        created = date
+        name = projName
+        color = NSColor.randomProjectColor()
+    }
 }

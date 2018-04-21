@@ -12,6 +12,7 @@ import RealmSwift
 class DBProject: Object {
     @objc dynamic var created = 0
     @objc dynamic var name = ""
+    @objc dynamic var colorData: Data?
 
     override static func primaryKey() -> String? {
         return "created"
@@ -19,7 +20,16 @@ class DBProject: Object {
 
     var asDomain: Project {
         let formattedDate = Date(timeIntervalSince1970: Double(created))
-        return Project(created: formattedDate, name: name)
+
+        let color: NSColor
+
+        if let data = colorData {
+            color = NSKeyedUnarchiver.unarchiveObject(with: data) as! NSColor
+        } else {
+            color = .purple
+        }
+
+        return Project(created: formattedDate, name: name, color: color)
     }
 
     func sync(domain: Project) {
@@ -29,6 +39,7 @@ class DBProject: Object {
         }
 
         name = domain.name
+        colorData = NSKeyedArchiver.archivedData(withRootObject: domain.color)
     }
 }
 

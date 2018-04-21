@@ -20,7 +20,8 @@ class ProjectItem: NSCollectionViewItem {
         view.layer?.cornerRadius = 10
     }
 
-    func setProjectName(_ name: String) {
-        projectNameLabel.stringValue = name
+    func setProject(_ project: Project) {
+        projectNameLabel.stringValue = project.name
+        view.layer?.backgroundColor = project.color.cgColor
     }
 }

@@ -36,6 +36,7 @@
 		09BBDD9B20836524005975CE /* NibInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BBDD9A20836524005975CE /* NibInitializable.swift */; };
 		09CCA9C6207FF56A00AC5591 /* NSViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CCA9C4207FF56A00AC5591 /* NSViewController+Extensions.swift */; };
 		09CCA9C7207FF56A00AC5591 /* NSViewController+Extensions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09CCA9C5207FF56A00AC5591 /* NSViewController+Extensions.xib */; };
+		09F3A495208B9C0D004139D2 /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F3A494208B9C0D004139D2 /* ProjectDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -84,6 +85,7 @@
 		09BBDD9A20836524005975CE /* NibInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibInitializable.swift; sourceTree = "<group>"; };
 		09CCA9C4207FF56A00AC5591 /* NSViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+Extensions.swift"; sourceTree = "<group>"; };
 		09CCA9C5207FF56A00AC5591 /* NSViewController+Extensions.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "NSViewController+Extensions.xib"; sourceTree = "<group>"; };
+		09F3A494208B9C0D004139D2 /* ProjectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 		094CE9BB207545B900FE361A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				09F3A493208B9BFD004139D2 /* ProjectDetail */,
 				09A1327F20826A450029F526 /* Projects */,
 				0939DAFD207DE60A00ABCBD4 /* Registration */,
 				094CE9BC207545C100FE361A /* Auth */,
@@ -277,6 +280,14 @@
 				09BBDD9A20836524005975CE /* NibInitializable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		09F3A493208B9BFD004139D2 /* ProjectDetail */ = {
+			isa = PBXGroup;
+			children = (
+				09F3A494208B9C0D004139D2 /* ProjectDetailViewController.swift */,
+			);
+			path = ProjectDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,6 +379,7 @@
 				094CE9BE207545CB00FE361A /* AuthViewController.swift in Sources */,
 				09A13299208276AA0029F526 /* ProdjectAlertView.swift in Sources */,
 				09A1328120826AA30029F526 /* ProjectsViewController.swift in Sources */,
+				09F3A495208B9C0D004139D2 /* ProjectDetailViewController.swift in Sources */,
 				094CE9BA2075458900FE361A /* User.swift in Sources */,
 				0939DAFF207DE61E00ABCBD4 /* RegistrationViewController.swift in Sources */,
 				0939DAE8207D57EE00ABCBD4 /* DBUser.swift in Sources */,
