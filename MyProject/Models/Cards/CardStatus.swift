@@ -13,3 +13,19 @@ enum CardStatus: Int {
     case inProgress
     case done
 }
+
+extension CardStatus {
+
+    static let All: [CardStatus] = [.toDo, .inProgress, .done]
+
+    var localizedDescription: String {
+        switch self {
+        case .toDo:
+            return "До виконання"
+        case .inProgress:
+            return "В процесі"
+        case .done:
+            return "Завершені"
+        }
+    }
+}

@@ -899,7 +899,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="aE5-5C-JRx"/>
                                 </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Розпочаті" id="rWc-ig-K5n">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="До виконання" id="rWc-ig-K5n">
                                     <font key="font" size="17" name="Impact"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1025,10 +1025,110 @@
                             <constraint firstItem="Fmg-ea-R1K" firstAttribute="leading" secondItem="Yjd-J9-Wg5" secondAttribute="leading" id="xfy-HH-d8r"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="BYx-oL-UHD" kind="modal" identifier="ShowAddCardView" id="Ycn-az-2g9"/>
+                    </connections>
                 </viewController>
                 <customObject id="5ES-yh-jtl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="44" y="2544"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4Rr-1m-3VI">
+            <objects>
+                <viewController id="BYx-oL-UHD" sceneMemberID="viewController">
+                    <view key="view" id="aEz-4s-gnu">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="112"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Egm-7q-XgX">
+                                <rect key="frame" x="18" y="70" width="44" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="0sp-7F-0PX"/>
+                                    <constraint firstAttribute="height" constant="22" id="3wt-8R-UP3"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Опис:" id="6CB-Sh-JOs">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="F5N-gm-bxv">
+                                <rect key="frame" x="68" y="70" width="362" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="2L4-Hy-DlL"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Введіть опис картки..." drawsBackground="YES" id="Sn3-Tt-RWj">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XPb-zp-M7S">
+                                <rect key="frame" x="18" y="38" width="124" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="98o-Y3-bSh"/>
+                                    <constraint firstAttribute="width" constant="120" id="dQd-Ol-hmO"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Оберіть пріоритет:" id="6Yj-KT-ibx">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xpt-lh-cio">
+                                <rect key="frame" x="146" y="39" width="286" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="VYZ-NN-gnQ"/>
+                                </constraints>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="eQ3-7R-6pH">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="Низький" width="93"/>
+                                        <segment label="Середній" width="93" selected="YES" tag="1"/>
+                                        <segment label="Високий" width="93"/>
+                                    </segments>
+                                </segmentedCell>
+                            </segmentedControl>
+                            <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilb-1U-biQ">
+                                <rect key="frame" x="20" y="8" width="327" height="22"/>
+                                <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="Введіть імя користувача" usesSingleLineMode="YES" bezelStyle="round" maximumRecents="40" id="7ui-M1-pKt">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </searchFieldCell>
+                            </searchField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aYg-1o-X0K">
+                                <rect key="frame" x="349" y="2" width="87" height="32"/>
+                                <buttonCell key="cell" type="push" title="Додати" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1Fy-9d-Dmx">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="XPb-zp-M7S" firstAttribute="top" secondItem="Egm-7q-XgX" secondAttribute="bottom" constant="8" id="1Pl-rk-TRo"/>
+                            <constraint firstAttribute="bottom" secondItem="ilb-1U-biQ" secondAttribute="bottom" constant="8" id="1sb-IH-hVd"/>
+                            <constraint firstItem="F5N-gm-bxv" firstAttribute="top" secondItem="aEz-4s-gnu" secondAttribute="top" constant="20" id="DfG-3n-ZYG"/>
+                            <constraint firstItem="Egm-7q-XgX" firstAttribute="top" secondItem="aEz-4s-gnu" secondAttribute="top" constant="20" id="IDS-cK-k0g"/>
+                            <constraint firstAttribute="trailing" secondItem="xpt-lh-cio" secondAttribute="trailing" constant="20" id="JQN-90-PrF"/>
+                            <constraint firstItem="XPb-zp-M7S" firstAttribute="leading" secondItem="aEz-4s-gnu" secondAttribute="leading" constant="20" id="M24-fl-KfW"/>
+                            <constraint firstItem="xpt-lh-cio" firstAttribute="top" secondItem="F5N-gm-bxv" secondAttribute="bottom" constant="8" id="OaJ-Up-oiw"/>
+                            <constraint firstAttribute="trailing" secondItem="aYg-1o-X0K" secondAttribute="trailing" constant="20" id="OxP-TK-7Pe"/>
+                            <constraint firstItem="aYg-1o-X0K" firstAttribute="centerY" secondItem="ilb-1U-biQ" secondAttribute="centerY" id="PAd-RN-y7e"/>
+                            <constraint firstAttribute="trailing" secondItem="F5N-gm-bxv" secondAttribute="trailing" constant="20" id="Xfx-3a-hCq"/>
+                            <constraint firstItem="F5N-gm-bxv" firstAttribute="leading" secondItem="Egm-7q-XgX" secondAttribute="trailing" constant="8" id="YLA-ku-45M"/>
+                            <constraint firstItem="ilb-1U-biQ" firstAttribute="leading" secondItem="aEz-4s-gnu" secondAttribute="leading" constant="20" id="acb-ap-NTc"/>
+                            <constraint firstItem="ilb-1U-biQ" firstAttribute="top" secondItem="XPb-zp-M7S" secondAttribute="bottom" constant="8" id="bUz-hc-1Ba"/>
+                            <constraint firstItem="Egm-7q-XgX" firstAttribute="leading" secondItem="aEz-4s-gnu" secondAttribute="leading" constant="20" id="dJs-JA-fwp"/>
+                            <constraint firstItem="aYg-1o-X0K" firstAttribute="leading" secondItem="ilb-1U-biQ" secondAttribute="trailing" constant="8" id="f8q-Vy-DTK"/>
+                            <constraint firstItem="xpt-lh-cio" firstAttribute="leading" secondItem="XPb-zp-M7S" secondAttribute="trailing" constant="8" id="pjn-sv-QJx"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="w8p-e6-lbj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44" y="3035"/>
         </scene>
         <!--Tab View Controller-->
         <scene sceneID="qv1-fq-rGg">

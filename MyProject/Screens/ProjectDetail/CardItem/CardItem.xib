@@ -7,6 +7,10 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="CardItem" customModule="MyProject" customModuleProvider="target">
             <connections>
+                <outlet property="cardNameLabel" destination="vjg-Wp-P1X" id="9HQ-oZ-hy0"/>
+                <outlet property="executersLabel" destination="2I3-Aw-b9s" id="UvZ-DA-wtJ"/>
+                <outlet property="priorityLabel" destination="Qfk-9c-KfR" id="a0e-f1-FIy"/>
+                <outlet property="statusButton" destination="dh3-Pw-mU8" id="jd2-dn-NWb"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -16,12 +20,23 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="202"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tva-sK-BqK">
-                    <rect key="frame" x="0.0" y="0.0" width="480" height="202"/>
+                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dh3-Pw-mU8" userLabel="PriorityButton">
+                    <rect key="frame" x="181" y="126" width="282" height="26"/>
                     <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="202" id="Hmw-bx-0gj"/>
+                        <constraint firstAttribute="height" constant="21" id="RKp-yv-dSQ"/>
                     </constraints>
-                </customView>
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" inset="2" arrowPosition="arrowAtCenter" id="wSW-2A-eLQ">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <menu key="menu" id="MLN-i9-T1r">
+                            <items>
+                                <menuItem title="Item 1" id="int-2V-Pqu"/>
+                                <menuItem title="Item 2" id="MYk-xT-g87"/>
+                                <menuItem title="Item 3" id="Qo2-HW-Vyr"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vjg-Wp-P1X">
                     <rect key="frame" x="20" y="157" width="440" height="25"/>
                     <constraints>
@@ -34,8 +49,9 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qfk-9c-KfR">
-                    <rect key="frame" x="18" y="129" width="444" height="20"/>
+                    <rect key="frame" x="18" y="129" width="159" height="20"/>
                     <constraints>
+                        <constraint firstAttribute="width" constant="155" id="1Ei-V2-MCI"/>
                         <constraint firstAttribute="height" constant="20" id="qCU-FN-sdl"/>
                     </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Пріоритет: Високий" id="nUF-0I-A6F">
@@ -52,22 +68,30 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tva-sK-BqK">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="202"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="202" id="Hmw-bx-0gj"/>
+                    </constraints>
+                </customView>
             </subviews>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="2I3-Aw-b9s" secondAttribute="bottom" constant="8" id="0Jn-fI-Dy4"/>
                 <constraint firstItem="Qfk-9c-KfR" firstAttribute="top" secondItem="vjg-Wp-P1X" secondAttribute="bottom" constant="8" id="1YT-za-xRc"/>
+                <constraint firstItem="2I3-Aw-b9s" firstAttribute="top" secondItem="dh3-Pw-mU8" secondAttribute="bottom" constant="8" id="1ds-6R-Ydy"/>
                 <constraint firstAttribute="trailing" secondItem="2I3-Aw-b9s" secondAttribute="trailing" constant="20" id="4uG-6R-Ff8"/>
                 <constraint firstItem="Qfk-9c-KfR" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="892-Xs-LUI"/>
+                <constraint firstItem="dh3-Pw-mU8" firstAttribute="centerY" secondItem="Qfk-9c-KfR" secondAttribute="centerY" id="8Tp-pB-Eai"/>
+                <constraint firstItem="dh3-Pw-mU8" firstAttribute="leading" secondItem="Qfk-9c-KfR" secondAttribute="trailing" constant="8" id="B3K-QI-wQQ"/>
                 <constraint firstItem="Tva-sK-BqK" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="GbY-To-Iha"/>
                 <constraint firstItem="2I3-Aw-b9s" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="PYI-bJ-MDc"/>
                 <constraint firstAttribute="trailing" secondItem="vjg-Wp-P1X" secondAttribute="trailing" constant="20" id="Qtf-On-tlh"/>
                 <constraint firstAttribute="bottom" secondItem="Tva-sK-BqK" secondAttribute="bottom" id="U5A-Qf-l3w"/>
                 <constraint firstAttribute="trailing" secondItem="Tva-sK-BqK" secondAttribute="trailing" id="bmU-Y1-20l"/>
+                <constraint firstAttribute="trailing" secondItem="dh3-Pw-mU8" secondAttribute="trailing" constant="20" id="cRS-Wp-jh7"/>
                 <constraint firstItem="vjg-Wp-P1X" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="fs8-mm-Vbc"/>
-                <constraint firstAttribute="trailing" secondItem="Qfk-9c-KfR" secondAttribute="trailing" constant="20" id="olp-6h-ScH"/>
                 <constraint firstItem="vjg-Wp-P1X" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="rYl-9X-4O2"/>
                 <constraint firstItem="Tva-sK-BqK" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="rhM-JF-qHU"/>
-                <constraint firstItem="2I3-Aw-b9s" firstAttribute="top" secondItem="Qfk-9c-KfR" secondAttribute="bottom" constant="8" id="s3V-uX-dUd"/>
             </constraints>
             <point key="canvasLocation" x="139" y="200"/>
         </customView>

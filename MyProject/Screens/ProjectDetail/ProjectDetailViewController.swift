@@ -12,6 +12,8 @@ class ProjectDetailViewController: NSViewController {
 
     var project: Project?
 
+    static let Segueidentifier = "ShowAddCardView"
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

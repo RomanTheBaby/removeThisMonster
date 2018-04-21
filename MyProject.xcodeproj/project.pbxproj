@@ -39,6 +39,8 @@
 		09F3A495208B9C0D004139D2 /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F3A494208B9C0D004139D2 /* ProjectDetailViewController.swift */; };
 		09F3A499208BA10A004139D2 /* CardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F3A497208BA10A004139D2 /* CardItem.swift */; };
 		09F3A49A208BA10A004139D2 /* CardItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F3A498208BA10A004139D2 /* CardItem.xib */; };
+		09F3A49D208BA76A004139D2 /* CardFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F3A49C208BA76A004139D2 /* CardFooterView.xib */; };
+		09F3A49F208BA77C004139D2 /* CardFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F3A49E208BA77C004139D2 /* CardFooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -90,6 +92,8 @@
 		09F3A494208B9C0D004139D2 /* ProjectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewController.swift; sourceTree = "<group>"; };
 		09F3A497208BA10A004139D2 /* CardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItem.swift; sourceTree = "<group>"; };
 		09F3A498208BA10A004139D2 /* CardItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardItem.xib; sourceTree = "<group>"; };
+		09F3A49C208BA76A004139D2 /* CardFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardFooterView.xib; sourceTree = "<group>"; };
+		09F3A49E208BA77C004139D2 /* CardFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +293,7 @@
 		09F3A493208B9BFD004139D2 /* ProjectDetail */ = {
 			isa = PBXGroup;
 			children = (
+				09F3A49B208BA759004139D2 /* CardFoorterView */,
 				09F3A496208BA0F3004139D2 /* CardItem */,
 				09F3A494208B9C0D004139D2 /* ProjectDetailViewController.swift */,
 			);
@@ -302,6 +307,15 @@
 				09F3A498208BA10A004139D2 /* CardItem.xib */,
 			);
 			path = CardItem;
+			sourceTree = "<group>";
+		};
+		09F3A49B208BA759004139D2 /* CardFoorterView */ = {
+			isa = PBXGroup;
+			children = (
+				09F3A49C208BA76A004139D2 /* CardFooterView.xib */,
+				09F3A49E208BA77C004139D2 /* CardFooterView.swift */,
+			);
+			path = CardFoorterView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,6 +387,7 @@
 				09F3A49A208BA10A004139D2 /* CardItem.xib in Resources */,
 				094CE9AB2075438400FE361A /* Assets.xcassets in Resources */,
 				09A1328620826D7E0029F526 /* ProjectItem.xib in Resources */,
+				09F3A49D208BA76A004139D2 /* CardFooterView.xib in Resources */,
 				094CE9AE2075438400FE361A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +405,7 @@
 				09A132952082724A0029F526 /* ProdjectsRealmProvider.swift in Sources */,
 				094CE9A72075438200FE361A /* AppDelegate.swift in Sources */,
 				0939DAE0207D553600ABCBD4 /* UsersRealmProvider.swift in Sources */,
+				09F3A49F208BA77C004139D2 /* CardFooterView.swift in Sources */,
 				0939DAED207D58B200ABCBD4 /* Card.swift in Sources */,
 				094CE9BE207545CB00FE361A /* AuthViewController.swift in Sources */,
 				09A13299208276AA0029F526 /* ProdjectAlertView.swift in Sources */,
