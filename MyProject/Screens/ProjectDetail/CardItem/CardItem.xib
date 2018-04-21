@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="CardItem" customModule="MyProject" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="202"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tva-sK-BqK">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="202"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="202" id="Hmw-bx-0gj"/>
+                    </constraints>
+                </customView>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vjg-Wp-P1X">
+                    <rect key="frame" x="20" y="157" width="440" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="WLo-0G-ZiZ"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" title="Card Name" drawsBackground="YES" id="BJz-XP-Tsh">
+                        <font key="font" size="15" name="HelveticaNeue-Bold"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qfk-9c-KfR">
+                    <rect key="frame" x="18" y="129" width="444" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="qCU-FN-sdl"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Пріоритет: Високий" id="nUF-0I-A6F">
+                        <font key="font" metaFont="system" size="14"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2I3-Aw-b9s">
+                    <rect key="frame" x="18" y="8" width="444" height="113"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Виконувачі: " id="xTR-al-PDj">
+                        <font key="font" metaFont="system" size="15"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="2I3-Aw-b9s" secondAttribute="bottom" constant="8" id="0Jn-fI-Dy4"/>
+                <constraint firstItem="Qfk-9c-KfR" firstAttribute="top" secondItem="vjg-Wp-P1X" secondAttribute="bottom" constant="8" id="1YT-za-xRc"/>
+                <constraint firstAttribute="trailing" secondItem="2I3-Aw-b9s" secondAttribute="trailing" constant="20" id="4uG-6R-Ff8"/>
+                <constraint firstItem="Qfk-9c-KfR" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="892-Xs-LUI"/>
+                <constraint firstItem="Tva-sK-BqK" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="GbY-To-Iha"/>
+                <constraint firstItem="2I3-Aw-b9s" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="PYI-bJ-MDc"/>
+                <constraint firstAttribute="trailing" secondItem="vjg-Wp-P1X" secondAttribute="trailing" constant="20" id="Qtf-On-tlh"/>
+                <constraint firstAttribute="bottom" secondItem="Tva-sK-BqK" secondAttribute="bottom" id="U5A-Qf-l3w"/>
+                <constraint firstAttribute="trailing" secondItem="Tva-sK-BqK" secondAttribute="trailing" id="bmU-Y1-20l"/>
+                <constraint firstItem="vjg-Wp-P1X" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="fs8-mm-Vbc"/>
+                <constraint firstAttribute="trailing" secondItem="Qfk-9c-KfR" secondAttribute="trailing" constant="20" id="olp-6h-ScH"/>
+                <constraint firstItem="vjg-Wp-P1X" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="rYl-9X-4O2"/>
+                <constraint firstItem="Tva-sK-BqK" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="rhM-JF-qHU"/>
+                <constraint firstItem="2I3-Aw-b9s" firstAttribute="top" secondItem="Qfk-9c-KfR" secondAttribute="bottom" constant="8" id="s3V-uX-dUd"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="200"/>
+        </customView>
+        <collectionViewItem nibName="CardItem" id="jyB-4n-2Vz" customClass="CardItem" customModule="MyProject" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="V6o-uP-czV"/>
+            </connections>
+        </collectionViewItem>
+    </objects>
+</document>

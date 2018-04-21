@@ -16,5 +16,8 @@ class ProjectDetailViewController: NSViewController {
         super.viewDidLoad()
 
         title = project?.name
+
+        view.wantsLayer = true
+        view.layer?.backgroundColor = NSColor.blue.cgColor
     }
 }

@@ -37,6 +37,8 @@
 		09CCA9C6207FF56A00AC5591 /* NSViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CCA9C4207FF56A00AC5591 /* NSViewController+Extensions.swift */; };
 		09CCA9C7207FF56A00AC5591 /* NSViewController+Extensions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09CCA9C5207FF56A00AC5591 /* NSViewController+Extensions.xib */; };
 		09F3A495208B9C0D004139D2 /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F3A494208B9C0D004139D2 /* ProjectDetailViewController.swift */; };
+		09F3A499208BA10A004139D2 /* CardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F3A497208BA10A004139D2 /* CardItem.swift */; };
+		09F3A49A208BA10A004139D2 /* CardItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F3A498208BA10A004139D2 /* CardItem.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -86,6 +88,8 @@
 		09CCA9C4207FF56A00AC5591 /* NSViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+Extensions.swift"; sourceTree = "<group>"; };
 		09CCA9C5207FF56A00AC5591 /* NSViewController+Extensions.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "NSViewController+Extensions.xib"; sourceTree = "<group>"; };
 		09F3A494208B9C0D004139D2 /* ProjectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewController.swift; sourceTree = "<group>"; };
+		09F3A497208BA10A004139D2 /* CardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItem.swift; sourceTree = "<group>"; };
+		09F3A498208BA10A004139D2 /* CardItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardItem.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,9 +289,19 @@
 		09F3A493208B9BFD004139D2 /* ProjectDetail */ = {
 			isa = PBXGroup;
 			children = (
+				09F3A496208BA0F3004139D2 /* CardItem */,
 				09F3A494208B9C0D004139D2 /* ProjectDetailViewController.swift */,
 			);
 			path = ProjectDetail;
+			sourceTree = "<group>";
+		};
+		09F3A496208BA0F3004139D2 /* CardItem */ = {
+			isa = PBXGroup;
+			children = (
+				09F3A497208BA10A004139D2 /* CardItem.swift */,
+				09F3A498208BA10A004139D2 /* CardItem.xib */,
+			);
+			path = CardItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,6 +370,7 @@
 			files = (
 				09A13297208275C90029F526 /* ProdjectAlertView.xib in Resources */,
 				09CCA9C7207FF56A00AC5591 /* NSViewController+Extensions.xib in Resources */,
+				09F3A49A208BA10A004139D2 /* CardItem.xib in Resources */,
 				094CE9AB2075438400FE361A /* Assets.xcassets in Resources */,
 				09A1328620826D7E0029F526 /* ProjectItem.xib in Resources */,
 				094CE9AE2075438400FE361A /* Main.storyboard in Resources */,
@@ -385,6 +400,7 @@
 				0939DAE8207D57EE00ABCBD4 /* DBUser.swift in Sources */,
 				0939DAEA207D588600ABCBD4 /* CardStatus.swift in Sources */,
 				0939DAFA207D688D00ABCBD4 /* NSView+Extension.swift in Sources */,
+				09F3A499208BA10A004139D2 /* CardItem.swift in Sources */,
 				0939DAEF207D58DA00ABCBD4 /* DBCard.swift in Sources */,
 				09A1328520826D7E0029F526 /* ProjectItem.swift in Sources */,
 				0939DAF1207D5F9E00ABCBD4 /* AuthInfo.swift in Sources */,
