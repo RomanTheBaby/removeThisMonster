@@ -12,11 +12,11 @@ class ProjectDetailViewController: NSViewController {
 
     var project: Project!
 
-    @IBOutlet weak private var todoCollectionView: NSScrollView!
-    @IBOutlet weak private var inProgressCollectionView: NSScrollView!
-    @IBOutlet weak private var doneCollectionView: NSScrollView!
+    @IBOutlet weak private var todoCollectionView: NSCollectionView!
+    @IBOutlet weak private var inProgressCollectionView: NSCollectionView!
+    @IBOutlet weak private var doneCollectionView: NSCollectionView!
 
-    static let Segueidentifier = "ShowAddCardView"
+    static let SegueIdentifier = "ShowAddCardView"
 
     private var allCards: [Card] {
         return UsersRealmProvider.SharedInstance.cards(for: project)
@@ -45,6 +45,10 @@ class ProjectDetailViewController: NSViewController {
             return cards(with: .done)
         }
     }
+
+    @IBAction private func actionAddCard(_ sender: NSButton) {
+        performSegue(withIdentifier: NSStoryboardSegue.Identifier.init("ShowAddCardView"), sender: nil)
+    }
 }
 
 extension ProjectDetailViewController: NSCollectionViewDataSource {
@@ -57,8 +61,9 @@ extension ProjectDetailViewController: NSCollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
+        let allCards = cards(for: collectionView)
         let cardItem = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "CardItem"), for: indexPath) as! CardItem
-        let card = cards(for: collectionView)[indexPath.item]
+        let card = allCards[indexPath.item]
         cardItem.configure(with: card)
         return cardItem
     }

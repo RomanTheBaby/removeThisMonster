@@ -905,14 +905,14 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gu3-Iy-G8q">
-                                <rect key="frame" x="8" y="8" width="300" height="464"/>
+                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gu3-Iy-G8q">
+                                <rect key="frame" x="8" y="43" width="300" height="429"/>
                                 <clipView key="contentView" drawsBackground="NO" id="IZV-Az-8u3">
-                                    <rect key="frame" x="1" y="1" width="298" height="462"/>
+                                    <rect key="frame" x="1" y="1" width="298" height="427"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="0Ce-aG-65Z">
-                                            <rect key="frame" x="0.0" y="0.0" width="298" height="158"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="298" height="427"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="Jy4-z3-5C7">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -930,11 +930,11 @@
                                     <constraint firstAttribute="width" constant="300" id="Jkr-Uy-Nw4"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="mck-so-T82">
-                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                    <rect key="frame" x="-100" y="-100" width="233" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="XFL-ae-L4L">
-                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <rect key="frame" x="283" y="1" width="16" height="421"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -1012,15 +1012,29 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0P7-Rk-XkR">
+                                <rect key="frame" x="8" y="8" width="300" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="PQz-LO-oca"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" title="Додати картку" bezelStyle="shadowlessSquare" imagePosition="left" borderStyle="border" inset="2" id="RFv-df-xY3">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="actionAddCard:" target="asi-pp-uOc" id="m0Z-uI-nO6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="0P7-Rk-XkR" firstAttribute="top" secondItem="gu3-Iy-G8q" secondAttribute="bottom" id="11y-4e-0mt"/>
+                            <constraint firstItem="0P7-Rk-XkR" firstAttribute="leading" secondItem="0Ce-aG-65Z" secondAttribute="leading" constant="-1" id="3Eb-dD-iHD"/>
                             <constraint firstItem="gu3-Iy-G8q" firstAttribute="top" secondItem="les-mf-V0h" secondAttribute="bottom" constant="8" id="ClN-cg-Z3C"/>
                             <constraint firstItem="CxC-L9-FZ9" firstAttribute="top" secondItem="wuL-xT-dle" secondAttribute="top" constant="16" id="E3Q-ZT-tfQ"/>
                             <constraint firstItem="jJZ-vs-mvb" firstAttribute="leading" secondItem="NuY-CU-iHU" secondAttribute="trailing" constant="50" id="GRP-4f-o44"/>
                             <constraint firstItem="CxC-L9-FZ9" firstAttribute="leading" secondItem="mc1-al-mbZ" secondAttribute="leading" id="HVF-V5-Gof"/>
                             <constraint firstItem="NuY-CU-iHU" firstAttribute="top" secondItem="CxC-L9-FZ9" secondAttribute="bottom" constant="8" id="PfZ-uz-5Sb"/>
                             <constraint firstItem="les-mf-V0h" firstAttribute="leading" secondItem="0Ce-aG-65Z" secondAttribute="leading" id="RAu-Zv-LYL"/>
-                            <constraint firstAttribute="bottom" secondItem="gu3-Iy-G8q" secondAttribute="bottom" constant="8" id="UWb-bS-s06"/>
                             <constraint firstItem="gu3-Iy-G8q" firstAttribute="top" secondItem="CxC-L9-FZ9" secondAttribute="bottom" constant="8" id="Uzy-4S-9Yy"/>
                             <constraint firstItem="Fmg-ea-R1K" firstAttribute="top" secondItem="wuL-xT-dle" secondAttribute="top" constant="16" id="YIy-Pe-B2V"/>
                             <constraint firstItem="gu3-Iy-G8q" firstAttribute="leading" secondItem="wuL-xT-dle" secondAttribute="leading" constant="8" id="c32-Cr-0Ao"/>
@@ -1028,6 +1042,7 @@
                             <constraint firstItem="jJZ-vs-mvb" firstAttribute="top" secondItem="Fmg-ea-R1K" secondAttribute="bottom" constant="8" id="g69-St-6Q4"/>
                             <constraint firstAttribute="bottom" secondItem="NuY-CU-iHU" secondAttribute="bottom" constant="8" id="gUH-tH-yLw"/>
                             <constraint firstItem="NuY-CU-iHU" firstAttribute="centerX" secondItem="wuL-xT-dle" secondAttribute="centerX" id="jD3-Wg-vxX"/>
+                            <constraint firstAttribute="bottom" secondItem="0P7-Rk-XkR" secondAttribute="bottom" constant="8" id="n4A-ZN-ath"/>
                             <constraint firstItem="NuY-CU-iHU" firstAttribute="leading" secondItem="gu3-Iy-G8q" secondAttribute="trailing" constant="50" id="opZ-1j-XPO"/>
                             <constraint firstItem="Fmg-ea-R1K" firstAttribute="trailing" secondItem="Yjd-J9-Wg5" secondAttribute="trailing" id="p5Z-0p-JoT"/>
                             <constraint firstItem="CxC-L9-FZ9" firstAttribute="trailing" secondItem="mc1-al-mbZ" secondAttribute="trailing" id="pGz-s1-IZS"/>
@@ -1035,23 +1050,24 @@
                             <constraint firstItem="les-mf-V0h" firstAttribute="top" secondItem="wuL-xT-dle" secondAttribute="top" constant="16" id="raz-rU-Ad5"/>
                             <constraint firstAttribute="trailing" secondItem="jJZ-vs-mvb" secondAttribute="trailing" constant="8" id="v6n-MD-dJQ"/>
                             <constraint firstItem="Fmg-ea-R1K" firstAttribute="leading" secondItem="Yjd-J9-Wg5" secondAttribute="leading" id="xfy-HH-d8r"/>
+                            <constraint firstItem="0P7-Rk-XkR" firstAttribute="trailing" secondItem="0Ce-aG-65Z" secondAttribute="trailing" constant="1" id="zN5-Ub-NIV"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="doneCollectionView" destination="jJZ-vs-mvb" id="1I3-Ob-5wR"/>
-                        <outlet property="inProgressCollectionView" destination="NuY-CU-iHU" id="458-8T-8vf"/>
-                        <outlet property="todoCollectionView" destination="gu3-Iy-G8q" id="GaN-M0-Lwy"/>
-                        <segue destination="BYx-oL-UHD" kind="modal" identifier="ShowAddCardView" id="Ycn-az-2g9"/>
+                        <outlet property="doneCollectionView" destination="Yjd-J9-Wg5" id="xAv-Om-5sb"/>
+                        <outlet property="inProgressCollectionView" destination="mc1-al-mbZ" id="BFc-Pu-h0O"/>
+                        <outlet property="todoCollectionView" destination="0Ce-aG-65Z" id="adA-hZ-4J9"/>
+                        <segue destination="BYx-oL-UHD" kind="sheet" identifier="ShowAddCardView" id="Ycn-az-2g9"/>
                     </connections>
                 </viewController>
                 <customObject id="5ES-yh-jtl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="44" y="2544"/>
         </scene>
-        <!--View Controller-->
+        <!--Додати Картку-->
         <scene sceneID="4Rr-1m-3VI">
             <objects>
-                <viewController id="BYx-oL-UHD" sceneMemberID="viewController">
+                <viewController title="Додати Картку" id="BYx-oL-UHD" sceneMemberID="viewController">
                     <view key="view" id="aEz-4s-gnu">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="112"/>
                         <autoresizingMask key="autoresizingMask"/>

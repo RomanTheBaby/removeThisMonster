@@ -8,6 +8,5 @@
 
 import Cocoa
 
-class CardFooterView: NSView {
-    
+class CardFooterView: NSCollectionViewItem {
 }
