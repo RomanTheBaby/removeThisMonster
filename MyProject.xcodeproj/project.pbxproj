@@ -41,6 +41,7 @@
 		09F3A49A208BA10A004139D2 /* CardItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F3A498208BA10A004139D2 /* CardItem.xib */; };
 		09F3A49D208BA76A004139D2 /* CardFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F3A49C208BA76A004139D2 /* CardFooterView.xib */; };
 		09F3A49F208BA77C004139D2 /* CardFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F3A49E208BA77C004139D2 /* CardFooterView.swift */; };
+		09FB1F31208CAFF400585E13 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FB1F30208CAFF400585E13 /* AddCardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -94,6 +95,7 @@
 		09F3A498208BA10A004139D2 /* CardItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardItem.xib; sourceTree = "<group>"; };
 		09F3A49C208BA76A004139D2 /* CardFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardFooterView.xib; sourceTree = "<group>"; };
 		09F3A49E208BA77C004139D2 /* CardFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFooterView.swift; sourceTree = "<group>"; };
+		09FB1F30208CAFF400585E13 /* AddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 		094CE9BB207545B900FE361A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				09FB1F2F208CAFE300585E13 /* AddCard */,
 				09F3A493208B9BFD004139D2 /* ProjectDetail */,
 				09A1327F20826A450029F526 /* Projects */,
 				0939DAFD207DE60A00ABCBD4 /* Registration */,
@@ -316,6 +319,14 @@
 				09F3A49E208BA77C004139D2 /* CardFooterView.swift */,
 			);
 			path = CardFoorterView;
+			sourceTree = "<group>";
+		};
+		09FB1F2F208CAFE300585E13 /* AddCard */ = {
+			isa = PBXGroup;
+			children = (
+				09FB1F30208CAFF400585E13 /* AddCardViewController.swift */,
+			);
+			path = AddCard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,6 +418,7 @@
 				0939DAE0207D553600ABCBD4 /* UsersRealmProvider.swift in Sources */,
 				09F3A49F208BA77C004139D2 /* CardFooterView.swift in Sources */,
 				0939DAED207D58B200ABCBD4 /* Card.swift in Sources */,
+				09FB1F31208CAFF400585E13 /* AddCardViewController.swift in Sources */,
 				094CE9BE207545CB00FE361A /* AuthViewController.swift in Sources */,
 				09A13299208276AA0029F526 /* ProdjectAlertView.swift in Sources */,
 				09A1328120826AA30029F526 /* ProjectsViewController.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import Cocoa
 
-struct User {
+struct User: Equatable {
     var username: String
     var password: String
     var created: Date

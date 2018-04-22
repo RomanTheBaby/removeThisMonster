@@ -65,8 +65,6 @@ final class ProdjectsRealmProvider: ProdjectsRealmProviderProtocol {
     func saveProdject(_ prodject: Project, completion: @escaping () -> Void, error: @escaping (Error) -> Void) {
         guard let realm = realm() else { return }
 
-        realm.beginWrite()
-
         let dbProdject = realm.object(ofType: DBProject.self, forPrimaryKey: prodject.created.asKey) ?? DBProject()
 
         guard prodject.name != dbProdject.name else {
@@ -75,6 +73,8 @@ final class ProdjectsRealmProvider: ProdjectsRealmProviderProtocol {
             error(err)
             return
         }
+
+        realm.beginWrite()
 
         dbProdject.sync(domain: prodject)
 

@@ -1067,13 +1067,13 @@
         <!--Додати Картку-->
         <scene sceneID="4Rr-1m-3VI">
             <objects>
-                <viewController title="Додати Картку" id="BYx-oL-UHD" sceneMemberID="viewController">
+                <viewController title="Додати Картку" id="BYx-oL-UHD" customClass="AddCardViewController" customModule="MyProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="aEz-4s-gnu">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="112"/>
+                        <rect key="frame" x="0.0" y="0.0" width="699" height="175"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Egm-7q-XgX">
-                                <rect key="frame" x="18" y="70" width="44" height="22"/>
+                                <rect key="frame" x="18" y="133" width="44" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="0sp-7F-0PX"/>
                                     <constraint firstAttribute="height" constant="22" id="3wt-8R-UP3"/>
@@ -1085,7 +1085,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="F5N-gm-bxv">
-                                <rect key="frame" x="68" y="70" width="362" height="22"/>
+                                <rect key="frame" x="68" y="133" width="611" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="2L4-Hy-DlL"/>
                                 </constraints>
@@ -1096,7 +1096,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XPb-zp-M7S">
-                                <rect key="frame" x="18" y="38" width="124" height="24"/>
+                                <rect key="frame" x="18" y="101" width="124" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="98o-Y3-bSh"/>
                                     <constraint firstAttribute="width" constant="120" id="dQd-Ol-hmO"/>
@@ -1108,7 +1108,7 @@
                                 </textFieldCell>
                             </textField>
                             <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xpt-lh-cio">
-                                <rect key="frame" x="146" y="39" width="286" height="24"/>
+                                <rect key="frame" x="146" y="102" width="535" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="VYZ-NN-gnQ"/>
                                 </constraints>
@@ -1122,44 +1122,84 @@
                                 </segmentedCell>
                             </segmentedControl>
                             <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilb-1U-biQ">
-                                <rect key="frame" x="20" y="8" width="327" height="22"/>
-                                <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="Введіть імя користувача" usesSingleLineMode="YES" bezelStyle="round" maximumRecents="40" id="7ui-M1-pKt">
+                                <rect key="frame" x="20" y="71" width="576" height="22"/>
+                                <searchFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Введіть імя користувача" allowsEditingTextAttributes="YES" usesSingleLineMode="YES" bezelStyle="round" sendsSearchStringImmediately="YES" sendsWholeSearchString="YES" maximumRecents="40" id="7ui-M1-pKt">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="actionAddUser:" target="BYx-oL-UHD" id="B36-Ny-jk7"/>
+                                    </connections>
                                 </searchFieldCell>
                             </searchField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aYg-1o-X0K">
-                                <rect key="frame" x="349" y="2" width="87" height="32"/>
+                                <rect key="frame" x="598" y="65" width="87" height="32"/>
                                 <buttonCell key="cell" type="push" title="Додати" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1Fy-9d-Dmx">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="buttonActionAddUser:" target="BYx-oL-UHD" id="9fo-6b-yQw"/>
+                                </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dHD-Qc-YMV">
+                                <rect key="frame" x="20" y="16" width="659" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="UE3-gU-Z61"/>
+                                </constraints>
+                                <buttonCell key="cell" type="smallSquare" title="Додати картку" bezelStyle="smallSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jWL-19-gMO">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="actionCreateCard:" target="BYx-oL-UHD" id="6Wh-yf-4yT"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="5nj-0D-Orf">
+                                <rect key="frame" x="18" y="46" width="663" height="17"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="Qmk-ZO-ZTq">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="XPb-zp-M7S" firstAttribute="top" secondItem="Egm-7q-XgX" secondAttribute="bottom" constant="8" id="1Pl-rk-TRo"/>
-                            <constraint firstAttribute="bottom" secondItem="ilb-1U-biQ" secondAttribute="bottom" constant="8" id="1sb-IH-hVd"/>
+                            <constraint firstItem="dHD-Qc-YMV" firstAttribute="leading" secondItem="ilb-1U-biQ" secondAttribute="leading" id="AU5-W1-WGT"/>
                             <constraint firstItem="F5N-gm-bxv" firstAttribute="top" secondItem="aEz-4s-gnu" secondAttribute="top" constant="20" id="DfG-3n-ZYG"/>
                             <constraint firstItem="Egm-7q-XgX" firstAttribute="top" secondItem="aEz-4s-gnu" secondAttribute="top" constant="20" id="IDS-cK-k0g"/>
+                            <constraint firstItem="dHD-Qc-YMV" firstAttribute="top" secondItem="5nj-0D-Orf" secondAttribute="bottom" constant="8" id="IUD-21-8Xo"/>
                             <constraint firstAttribute="trailing" secondItem="xpt-lh-cio" secondAttribute="trailing" constant="20" id="JQN-90-PrF"/>
                             <constraint firstItem="XPb-zp-M7S" firstAttribute="leading" secondItem="aEz-4s-gnu" secondAttribute="leading" constant="20" id="M24-fl-KfW"/>
                             <constraint firstItem="xpt-lh-cio" firstAttribute="top" secondItem="F5N-gm-bxv" secondAttribute="bottom" constant="8" id="OaJ-Up-oiw"/>
                             <constraint firstAttribute="trailing" secondItem="aYg-1o-X0K" secondAttribute="trailing" constant="20" id="OxP-TK-7Pe"/>
                             <constraint firstItem="aYg-1o-X0K" firstAttribute="centerY" secondItem="ilb-1U-biQ" secondAttribute="centerY" id="PAd-RN-y7e"/>
+                            <constraint firstAttribute="trailing" secondItem="5nj-0D-Orf" secondAttribute="trailing" constant="20" id="PMO-wj-fTh"/>
                             <constraint firstAttribute="trailing" secondItem="F5N-gm-bxv" secondAttribute="trailing" constant="20" id="Xfx-3a-hCq"/>
                             <constraint firstItem="F5N-gm-bxv" firstAttribute="leading" secondItem="Egm-7q-XgX" secondAttribute="trailing" constant="8" id="YLA-ku-45M"/>
+                            <constraint firstItem="dHD-Qc-YMV" firstAttribute="trailing" secondItem="aYg-1o-X0K" secondAttribute="trailing" id="Zep-Hg-TIZ"/>
                             <constraint firstItem="ilb-1U-biQ" firstAttribute="leading" secondItem="aEz-4s-gnu" secondAttribute="leading" constant="20" id="acb-ap-NTc"/>
                             <constraint firstItem="ilb-1U-biQ" firstAttribute="top" secondItem="XPb-zp-M7S" secondAttribute="bottom" constant="8" id="bUz-hc-1Ba"/>
                             <constraint firstItem="Egm-7q-XgX" firstAttribute="leading" secondItem="aEz-4s-gnu" secondAttribute="leading" constant="20" id="dJs-JA-fwp"/>
+                            <constraint firstItem="5nj-0D-Orf" firstAttribute="leading" secondItem="aEz-4s-gnu" secondAttribute="leading" constant="20" id="eEg-za-p3B"/>
                             <constraint firstItem="aYg-1o-X0K" firstAttribute="leading" secondItem="ilb-1U-biQ" secondAttribute="trailing" constant="8" id="f8q-Vy-DTK"/>
                             <constraint firstItem="xpt-lh-cio" firstAttribute="leading" secondItem="XPb-zp-M7S" secondAttribute="trailing" constant="8" id="pjn-sv-QJx"/>
+                            <constraint firstItem="5nj-0D-Orf" firstAttribute="top" secondItem="ilb-1U-biQ" secondAttribute="bottom" constant="8" id="qM3-1L-Hp6"/>
+                            <constraint firstAttribute="bottom" secondItem="dHD-Qc-YMV" secondAttribute="bottom" constant="16" id="wbt-gw-qh1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="priorityButton" destination="xpt-lh-cio" id="2hD-Ov-0cB"/>
+                        <outlet property="searchField" destination="ilb-1U-biQ" id="Wrr-0h-ZOa"/>
+                        <outlet property="selectedUsersLabel" destination="5nj-0D-Orf" id="JN1-J7-Th7"/>
+                        <outlet property="titleLabel" destination="F5N-gm-bxv" id="jxW-7r-9bF"/>
+                        <outlet property="userNameSearchFieldCell" destination="7ui-M1-pKt" id="SIU-YV-FJU"/>
+                    </connections>
                 </viewController>
                 <customObject id="w8p-e6-lbj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="44" y="2998"/>
+            <point key="canvasLocation" x="43.5" y="3117.5"/>
         </scene>
         <!--Tab View Controller-->
         <scene sceneID="qv1-fq-rGg">

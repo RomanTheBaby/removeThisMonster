@@ -22,13 +22,31 @@ class ProjectDetailViewController: NSViewController {
         return UsersRealmProvider.SharedInstance.cards(for: project)
     }
 
+    private let availableUsers = UsersRealmProvider.SharedInstance.fetchAllUsers()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let layout = NSCollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 10.0
+        layout.itemSize = NSSize(width: 290, height: 150)
+        layout.sectionInset = NSEdgeInsets(top: 10, left: 5, bottom: 10, right: 5.0)
+        todoCollectionView.collectionViewLayout = layout
+        (inProgressCollectionView.collectionViewLayout as? NSCollectionViewFlowLayout)?.itemSize = NSSize(width: 290, height: 150)
+        (doneCollectionView.collectionViewLayout as? NSCollectionViewFlowLayout)?.itemSize = NSSize(width: 290, height: 150)
+
+//        inProgressCollectionView.collectionViewLayout = layout
+//        doneCollectionView.collectionViewLayout = layout
 
         title = project.name
 
         view.wantsLayer = true
         view.layer?.backgroundColor = NSColor.blue.cgColor
+    }
+
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        todoCollectionView.reloadData()
     }
 
     private func cards(with status: CardStatus) -> [Card] {
@@ -49,6 +67,17 @@ class ProjectDetailViewController: NSViewController {
     @IBAction private func actionAddCard(_ sender: NSButton) {
         performSegue(withIdentifier: NSStoryboardSegue.Identifier.init("ShowAddCardView"), sender: nil)
     }
+
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        guard let viewController = segue.destinationController as? AddCardViewController else { return }
+        viewController.project = project
+    }
+
+    private func reloadAllData() {
+        todoCollectionView.reloadData()
+        inProgressCollectionView.reloadData()
+        doneCollectionView.reloadData()
+    }
 }
 
 extension ProjectDetailViewController: NSCollectionViewDataSource {
@@ -64,7 +93,11 @@ extension ProjectDetailViewController: NSCollectionViewDataSource {
         let allCards = cards(for: collectionView)
         let cardItem = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "CardItem"), for: indexPath) as! CardItem
         let card = allCards[indexPath.item]
-        cardItem.configure(with: card)
+        print(availableUsers.map { user in (user.username, user.cards.map { ($0.created.asKey, $0.title) }) })
+        print(card.created.asKey)
+        cardItem.configure(with: card, executers: availableUsers.filter { user in user.cards.index(where: { $0.created.asKey == card.created.asKey }) != nil })
+
+        cardItem.actionHandler = { self.reloadAllData() }
         return cardItem
     }
 }

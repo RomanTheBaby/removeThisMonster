@@ -8,7 +8,7 @@
 
 import Cocoa
 
-struct Card {
+struct Card: Equatable {
     var title: String
     var status: CardStatus
     var created: Date

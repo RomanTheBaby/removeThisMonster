@@ -10,9 +10,17 @@ import Cocoa
 import RealmSwift
 
 protocol UsersRealmProviderProtocol {
+    func fetchAllUsers() -> [User]
     func cards(for project: Project) -> [Card]
     func retriveUser(with authInfo: AuthInfo) -> User?
-    func saveUser(_ user: User, completion: @escaping () -> Void, error: @escaping (Error) -> Void)
+    func saveUser(_ user: User, update: Bool, completion: @escaping () -> Void, error: @escaping (Error) -> Void)
+    func saveCard(_ card: Card, completion: @escaping () -> Void, error: @escaping (Error) -> Void)
+}
+
+extension UsersRealmProviderProtocol {
+    func saveUser(_ user: User, update: Bool = false, completion: @escaping () -> Void, error: @escaping (Error) -> Void) {
+        saveUser(user, update: update, completion: completion, error: error)
+    }
 }
 
 final class UsersRealmProvider: UsersRealmProviderProtocol {
@@ -29,7 +37,7 @@ final class UsersRealmProvider: UsersRealmProviderProtocol {
             .appendingPathComponent("users")
             .appendingPathExtension("realm")
 
-        print("Users DB path: ", databaseFileUrl)
+//        print("Users DB path: ", databaseFileUrl)
 
         let realmConfiguration = Realm.Configuration(fileURL: databaseFileUrl,
                                                      inMemoryIdentifier: nil,
@@ -44,6 +52,11 @@ final class UsersRealmProvider: UsersRealmProviderProtocol {
 
         guard let realm = try? Realm(configuration: realmConfiguration) else { return nil }
         return realm
+    }
+
+    func fetchAllUsers() -> [User] {
+        guard let realm = realm() else { return [] }
+        return Array(realm.objects(DBUser.self).map { $0.asDomain })
     }
 
     func cards(for project: Project) -> [Card] {
@@ -65,10 +78,10 @@ final class UsersRealmProvider: UsersRealmProviderProtocol {
         return dbUser.asDomain
     }
 
-    func saveUser(_ user: User, completion: @escaping () -> Void, error: @escaping (Error) -> Void) {
+    func saveUser(_ user: User, update: Bool = false, completion: @escaping () -> Void, error: @escaping (Error) -> Void) {
         guard let realm = realm() else { return }
 
-        guard realm.object(ofType: DBUser.self, forPrimaryKey: user.username) == nil else {
+        if realm.object(ofType: DBUser.self, forPrimaryKey: user.username) == nil, !update {
             let err = NSError(domain: "com.alinka",
                                 code: 404,
                                 userInfo: [NSLocalizedDescriptionKey: "Користувач з таким імя вже існує!"])
@@ -81,7 +94,7 @@ final class UsersRealmProvider: UsersRealmProviderProtocol {
         let realmUser = DBUser()
         realmUser.sync(domain: user)
 
-        realm.add(realmUser)
+        realm.add(realmUser, update: true)
 
         do {
             try realm.commitWrite()
@@ -89,6 +102,23 @@ final class UsersRealmProvider: UsersRealmProviderProtocol {
         } catch let err {
             error(err)
             print("Error writing Down: ", err.localizedDescription)
+        }
+    }
+
+    func saveCard(_ card: Card, completion: @escaping () -> Void, error: @escaping (Error) -> Void) {
+        guard let realm = realm() else { return }
+
+        let dbCard = realm.object(ofType: DBCard.self, forPrimaryKey: card.created.asKey) ?? DBCard()
+
+        realm.beginWrite()
+        dbCard.sync(domain: card)
+        realm.add(dbCard)
+
+        do {
+            try realm.commitWrite()
+            completion()
+        } catch let err {
+            error(err)
         }
     }
 }

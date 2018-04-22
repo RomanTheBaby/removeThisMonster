@@ -35,7 +35,7 @@ class DBCard: Object {
 
         if created != domain.created.asKey {
             // Realm throws fatalError if inserted object primary key is being changed, even if key is same
-            self.created = domain.created.asKey
+            created = domain.created.asKey
         }
 
         desc = domain.description

@@ -8,7 +8,7 @@
 
 import Cocoa
 
-enum CardStatus: Int {
+enum CardStatus: Int, Equatable {
     case toDo
     case inProgress
     case done
