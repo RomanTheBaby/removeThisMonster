@@ -40,7 +40,6 @@ final class ProdjectAlertView: NSView, NibInitializable {
         guard !name.isEmpty else { dismiss?(); return }
         let project = Project(projName: name)
         ProdjectsRealmProvider.SharedInstance.saveProdject(project, completion: { [weak self] in
-            print("Project created")
             self?.completion?()
         }) { [weak self] (err) in
             self?.error?(err)

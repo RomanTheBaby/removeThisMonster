@@ -78,21 +78,40 @@ final class UsersRealmProvider: UsersRealmProviderProtocol {
         return dbUser.asDomain
     }
 
-    func saveUser(_ user: User, update: Bool = false, completion: @escaping () -> Void, error: @escaping (Error) -> Void) {
+    func saveUser(_ user: User, update: Bool, completion: @escaping () -> Void, error: @escaping (Error) -> Void) {
         guard let realm = realm() else { return }
 
-        if realm.object(ofType: DBUser.self, forPrimaryKey: user.username) == nil, !update {
-            let err = NSError(domain: "com.alinka",
-                                code: 404,
-                                userInfo: [NSLocalizedDescriptionKey: "Користувач з таким імя вже існує!"])
-            error(err)
-            return
+//        guard realm.object(ofType: DBUser.self, forPrimaryKey: user.username) == nil else {
+//            let err = NSError(domain: "com.alinka",
+//                                code: 404,
+//                                userInfo: [NSLocalizedDescriptionKey: "Користувач з таким імя вже існує!"])
+//            error(err)
+//            return
+//        }
+
+        let realmUser: DBUser
+
+        if !update {
+            // then login
+            guard realm.object(ofType: DBUser.self, forPrimaryKey: user.username) == nil else {
+                let err = NSError(domain: "com.alinka",
+                                  code: 404,
+                                  userInfo: [NSLocalizedDescriptionKey: "Користувач з таким імя вже існує!"])
+                error(err)
+                return
+            }
+
+            realmUser = DBUser()
+            realm.beginWrite()
+
+            realmUser.sync(domain: user)
+        } else {
+            realm.beginWrite()
+
+            realmUser = realm.object(ofType: DBUser.self, forPrimaryKey: user.username)!
+
+            realmUser.cards.append(contentsOf: user.cards)
         }
-
-        realm.beginWrite()
-
-        let realmUser = DBUser()
-        realmUser.sync(domain: user)
 
         realm.add(realmUser, update: true)
 
@@ -112,7 +131,8 @@ final class UsersRealmProvider: UsersRealmProviderProtocol {
 
         realm.beginWrite()
         dbCard.sync(domain: card)
-        realm.add(dbCard)
+        realm.create(DBCard.self, value: dbCard, update: true)
+//        realm.add(dbCard, update: true)
 
         do {
             try realm.commitWrite()

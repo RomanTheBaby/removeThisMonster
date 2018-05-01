@@ -64,7 +64,7 @@ class AddCardViewController: NSViewController {
         UsersRealmProvider.SharedInstance.saveCard(card, completion: {
             self.selectedUsers.forEach({ (user) in
                 var mutatedUser = user
-                mutatedUser.cards.append(card)
+                mutatedUser.cards.append(card.created)
                 UsersRealmProvider.SharedInstance.saveUser(mutatedUser, update: true, completion: {
                     let parent = self.parent as? ProjectDetailViewController
                     parent?.reloadAllData()

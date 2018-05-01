@@ -12,5 +12,5 @@ struct User: Equatable {
     var username: String
     var password: String
     var created: Date
-    var cards: [Card]
+    var cards: [Int]
 }
