@@ -32,10 +32,11 @@ class ProjectDetailViewController: NSViewController {
         layout.itemSize = NSSize(width: 290, height: 150)
         layout.sectionInset = NSEdgeInsets(top: 10, left: 5, bottom: 10, right: 5.0)
         todoCollectionView.collectionViewLayout = layout
-        inProgressCollectionView.collectionViewLayout = layout
-        doneCollectionView.collectionViewLayout = layout
-        reloadAllData()
+        (inProgressCollectionView.collectionViewLayout as? NSCollectionViewFlowLayout)?.itemSize = NSSize(width: 290, height: 150)
+        (doneCollectionView.collectionViewLayout as? NSCollectionViewFlowLayout)?.itemSize = NSSize(width: 290, height: 150)
 
+//        inProgressCollectionView.collectionViewLayout = layout
+//        doneCollectionView.collectionViewLayout = layout
         title = project.name
 
         view.wantsLayer = true

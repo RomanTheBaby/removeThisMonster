@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyProject/Screens/ProjectDetail/ProjectDetailViewController.swift"
-            timestampString = "546894600.77755"
+            timestampString = "546896475.95197"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "collectionView(_:itemForRepresentedObjectAt:)"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -73,7 +73,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyProject/Database/UsersRealmProvider.swift"
-            timestampString = "546894600.777616"
+            timestampString = "546896421.953631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "132"
@@ -89,13 +89,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyProject/Screens/ProjectDetail/ProjectDetailViewController.swift"
-            timestampString = "546894600.777913"
+            timestampString = "546896475.952355"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "reloadAllData()"
-            landmarkType = "7">
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "ProjectDetailViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
