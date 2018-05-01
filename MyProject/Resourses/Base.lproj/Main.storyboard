@@ -880,11 +880,11 @@
             <objects>
                 <viewController title="Проект" id="asi-pp-uOc" customClass="ProjectDetailViewController" customModule="MyProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="wuL-xT-dle">
-                        <rect key="frame" x="0.0" y="0.0" width="1016" height="522"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1016" height="700"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CxC-L9-FZ9">
-                                <rect key="frame" x="357" y="480" width="302" height="26"/>
+                                <rect key="frame" x="357" y="658" width="302" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="PCJ-Yi-tV4"/>
                                 </constraints>
@@ -895,7 +895,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="les-mf-V0h">
-                                <rect key="frame" x="7" y="480" width="302" height="26"/>
+                                <rect key="frame" x="7" y="658" width="302" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="aE5-5C-JRx"/>
                                 </constraints>
@@ -906,13 +906,13 @@
                                 </textFieldCell>
                             </textField>
                             <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gu3-Iy-G8q">
-                                <rect key="frame" x="8" y="43" width="300" height="429"/>
+                                <rect key="frame" x="8" y="43" width="300" height="607"/>
                                 <clipView key="contentView" drawsBackground="NO" id="IZV-Az-8u3">
-                                    <rect key="frame" x="1" y="1" width="298" height="427"/>
+                                    <rect key="frame" x="1" y="1" width="298" height="605"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="0Ce-aG-65Z">
-                                            <rect key="frame" x="0.0" y="0.0" width="298" height="427"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="298" height="605"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="Jy4-z3-5C7">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -938,14 +938,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuY-CU-iHU">
-                                <rect key="frame" x="358" y="8" width="300" height="464"/>
+                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuY-CU-iHU">
+                                <rect key="frame" x="358" y="8" width="300" height="642"/>
                                 <clipView key="contentView" drawsBackground="NO" id="ZtT-9K-VgT">
-                                    <rect key="frame" x="1" y="1" width="298" height="462"/>
+                                    <rect key="frame" x="1" y="1" width="298" height="640"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="mc1-al-mbZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="298" height="158"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="298" height="640"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="X0r-Yh-rle">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -960,7 +960,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="hE3-0I-gar">
-                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                    <rect key="frame" x="-100" y="-100" width="233" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="sMq-vE-Kuj">
@@ -968,14 +968,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJZ-vs-mvb">
-                                <rect key="frame" x="708" y="8" width="300" height="464"/>
+                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJZ-vs-mvb">
+                                <rect key="frame" x="708" y="8" width="300" height="642"/>
                                 <clipView key="contentView" drawsBackground="NO" id="tCP-gC-6wA">
-                                    <rect key="frame" x="1" y="1" width="298" height="462"/>
+                                    <rect key="frame" x="1" y="1" width="298" height="640"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="Yjd-J9-Wg5">
-                                            <rect key="frame" x="0.0" y="0.0" width="298" height="158"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="298" height="640"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="f1p-rZ-6Ms">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -993,7 +993,7 @@
                                     <constraint firstAttribute="width" constant="300" id="NWB-Y0-uNl"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="EWZ-qk-0bH">
-                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                    <rect key="frame" x="-100" y="-100" width="233" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="UMV-bC-WdH">
@@ -1002,7 +1002,7 @@
                                 </scroller>
                             </scrollView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Fmg-ea-R1K">
-                                <rect key="frame" x="707" y="480" width="302" height="26"/>
+                                <rect key="frame" x="707" y="658" width="302" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="M3c-Hf-9N4"/>
                                 </constraints>

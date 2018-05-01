@@ -109,5 +109,6 @@ extension ProjectsViewController: NSCollectionViewDelegate {
         guard let indexPath = indexPaths.first else { return }
         selectedProject = projects[indexPath.item]
         self.performSegue(withIdentifier: NSStoryboardSegue.Identifier(self.SegueIdentifier), sender: nil)
+        view.window?.close()
     }
 }

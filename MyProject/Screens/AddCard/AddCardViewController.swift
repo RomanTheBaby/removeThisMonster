@@ -61,14 +61,18 @@ class AddCardViewController: NSViewController {
                         description: titleLabel.stringValue)
 
 
+        var usersCount = 0
         UsersRealmProvider.SharedInstance.saveCard(card, completion: {
             self.selectedUsers.forEach({ (user) in
                 var mutatedUser = user
                 mutatedUser.cards.append(card.created)
                 UsersRealmProvider.SharedInstance.saveUser(mutatedUser, update: true, completion: {
-                    let parent = self.parent as? ProjectDetailViewController
-                    parent?.reloadAllData()
-                    self.dismissViewController(self)
+                    usersCount += 1
+                    if usersCount == self.selectedUsers.count - 1 {
+                        let parent = self.parent as? ProjectDetailViewController
+                        parent?.reloadAllData()
+                        self.dismissViewController(self)
+                    }
                 }, error: { (err) in
                     self.showAlert(for: err)
                 })
@@ -91,5 +95,11 @@ class AddCardViewController: NSViewController {
         } else {
             self.showAlert(for: "Користувача з таким імям не існує!")
         }
+    }
+}
+
+extension NSTextView {
+    open override func hitTest(_ point: NSPoint) -> NSView? {
+        return nil
     }
 }

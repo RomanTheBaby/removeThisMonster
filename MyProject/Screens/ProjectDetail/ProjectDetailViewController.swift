@@ -32,11 +32,8 @@ class ProjectDetailViewController: NSViewController {
         layout.itemSize = NSSize(width: 290, height: 150)
         layout.sectionInset = NSEdgeInsets(top: 10, left: 5, bottom: 10, right: 5.0)
         todoCollectionView.collectionViewLayout = layout
-        (inProgressCollectionView.collectionViewLayout as? NSCollectionViewFlowLayout)?.itemSize = NSSize(width: 290, height: 150)
-        (doneCollectionView.collectionViewLayout as? NSCollectionViewFlowLayout)?.itemSize = NSSize(width: 290, height: 150)
-
-//        inProgressCollectionView.collectionViewLayout = layout
-//        doneCollectionView.collectionViewLayout = layout
+        inProgressCollectionView.collectionViewLayout = layout
+        doneCollectionView.collectionViewLayout = layout
 
         title = project.name
 
@@ -46,7 +43,14 @@ class ProjectDetailViewController: NSViewController {
 
     override func viewWillAppear() {
         super.viewWillAppear()
-        todoCollectionView.reloadData()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.reloadAllData()
+        }
+    }
+
+    override func viewDidAppear() {
+        super.viewDidAppear()
     }
 
     private func cards(with status: CardStatus) -> [Card] {
@@ -86,6 +90,9 @@ extension ProjectDetailViewController: NSCollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView == doneCollectionView {
+            print("Section: ", section, "\nItems: ", cards(for: collectionView).count, "\n\n============")
+        }
         return cards(for: collectionView).count
     }
 
