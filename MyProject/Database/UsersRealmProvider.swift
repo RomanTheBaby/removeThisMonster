@@ -37,7 +37,7 @@ final class UsersRealmProvider: UsersRealmProviderProtocol {
             .appendingPathComponent("users")
             .appendingPathExtension("realm")
 
-//        print("Users DB path: ", databaseFileUrl)
+        print("Users DB path: ", databaseFileUrl)
 
         let realmConfiguration = Realm.Configuration(fileURL: databaseFileUrl,
                                                      inMemoryIdentifier: nil,
@@ -108,7 +108,7 @@ final class UsersRealmProvider: UsersRealmProviderProtocol {
     func saveCard(_ card: Card, completion: @escaping () -> Void, error: @escaping (Error) -> Void) {
         guard let realm = realm() else { return }
 
-        let dbCard = realm.object(ofType: DBCard.self, forPrimaryKey: card.created.asKey) ?? DBCard()
+        let dbCard = realm.object(ofType: DBCard.self, forPrimaryKey: card.created) ?? DBCard()
 
         realm.beginWrite()
         dbCard.sync(domain: card)

@@ -73,7 +73,7 @@ class ProjectDetailViewController: NSViewController {
         viewController.project = project
     }
 
-    private func reloadAllData() {
+    func reloadAllData() {
         todoCollectionView.reloadData()
         inProgressCollectionView.reloadData()
         doneCollectionView.reloadData()
@@ -93,9 +93,9 @@ extension ProjectDetailViewController: NSCollectionViewDataSource {
         let allCards = cards(for: collectionView)
         let cardItem = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "CardItem"), for: indexPath) as! CardItem
         let card = allCards[indexPath.item]
-        print(availableUsers.map { user in (user.username, user.cards.map { ($0.created.asKey, $0.title) }) })
-        print(card.created.asKey)
-        cardItem.configure(with: card, executers: availableUsers.filter { user in user.cards.index(where: { $0.created.asKey == card.created.asKey }) != nil })
+        print(availableUsers.map { user in (user.username, user.cards.map { ($0.created, $0.title) }) })
+        print(card.created)
+        cardItem.configure(with: card, executers: availableUsers.filter { user in user.cards.index(where: { $0.created == card.created }) != nil })
 
         cardItem.actionHandler = { self.reloadAllData() }
         return cardItem

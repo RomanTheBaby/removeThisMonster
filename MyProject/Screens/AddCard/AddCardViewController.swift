@@ -41,6 +41,10 @@ class AddCardViewController: NSViewController {
         addUserToCard(named: enteredName)
     }
 
+    @IBAction private func actionCancel(_ sender: NSButton) {
+        dismissViewController(self)
+    }
+
     @IBAction private func actionCreateCard(_ sender: NSButton) {
         if titleLabel.stringValue.isEmpty {
             showAlert(for: "Введіть назву картки!")
@@ -52,20 +56,24 @@ class AddCardViewController: NSViewController {
             return
         }
 
-        let card = Card(title: titleLabel.stringValue, status: .toDo, created: Date(),
+        let card = Card(title: titleLabel.stringValue, status: .toDo, created: Date().asKey,
                         priority:  priorityButton.selectedSegment, projectId: project.created.asKey,
                         description: titleLabel.stringValue)
+
 
         UsersRealmProvider.SharedInstance.saveCard(card, completion: {
             self.selectedUsers.forEach({ (user) in
                 var mutatedUser = user
                 mutatedUser.cards.append(card)
                 UsersRealmProvider.SharedInstance.saveUser(mutatedUser, update: true, completion: {
+                    let parent = self.parent as? ProjectDetailViewController
+                    parent?.reloadAllData()
                     self.dismissViewController(self)
                 }, error: { (err) in
                     self.showAlert(for: err)
                 })
             })
+
         }) { (err) in
             self.showAlert(for: err)
         }

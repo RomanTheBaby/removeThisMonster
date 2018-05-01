@@ -43,7 +43,7 @@ class DBUser: Object {
 
         let dbCards = domain.cards.compactMap { card -> DBCard in
             let dbCard = DBCard()
-            dbCard.created = card.created.asKey
+            dbCard.created = card.created
             dbCard.desc = card.description
             dbCard.title = card.title
             dbCard.status = card.status.rawValue

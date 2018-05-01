@@ -23,19 +23,18 @@ class DBCard: Object {
 
     var asDomain: Card {
         let cardStatus = CardStatus(rawValue: status) ?? .toDo
-        let formattedDate = Date(timeIntervalSince1970: Double(created))
 
         let card = Card(title: title, status: cardStatus,
-                        created: formattedDate, priority: priority,
+                        created: created, priority: priority,
                         projectId: projectID, description: desc)
         return card
     }
 
     func sync(domain: Card) {
 
-        if created != domain.created.asKey {
+        if created != domain.created {
             // Realm throws fatalError if inserted object primary key is being changed, even if key is same
-            created = domain.created.asKey
+            created = domain.created
         }
 
         desc = domain.description

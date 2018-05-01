@@ -6,43 +6,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyProject/Screens/Registration/RegistrationViewController.swift"
-            timestampString = "545419589.9418091"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "registerUser()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyProject/Screens/Registration/RegistrationViewController.swift"
-            timestampString = "545419589.942175"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "registerUser()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyProject/Screens/ProjectDetail/ProjectDetailViewController.swift"
-            timestampString = "546115218.575999"
+            timestampString = "546887246.691413"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"
@@ -51,14 +19,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "MyProject.ProjectDetailViewController.collectionView(__ObjC.NSCollectionView, itemForRepresentedObjectAt: Foundation.IndexPath) -&gt; __ObjC.NSCollectionViewItem"
                   moduleName = "MyProject"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/baby/Developer/MyProjects/MyProject/MyProject/Screens/ProjectDetail/ProjectDetailViewController.swift"
-                  timestampString = "546115218.9868129"
+                  timestampString = "546115412.250398"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "98"
@@ -66,14 +34,14 @@
                   offsetFromSymbolStart = "1293">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #2 (MyProject.User) -&gt; Swift.Bool in MyProject.ProjectDetailViewController.collectionView(__ObjC.NSCollectionView, itemForRepresentedObjectAt: Foundation.IndexPath) -&gt; __ObjC.NSCollectionViewItem"
                   moduleName = "MyProject"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/baby/Developer/MyProjects/MyProject/MyProject/Screens/ProjectDetail/ProjectDetailViewController.swift"
-                  timestampString = "546115218.988403"
+                  timestampString = "546115412.251873"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "98"
@@ -81,14 +49,14 @@
                   offsetFromSymbolStart = "28">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (MyProject.Card) -&gt; Swift.Bool in closure #2 (MyProject.User) -&gt; Swift.Bool in MyProject.ProjectDetailViewController.collectionView(__ObjC.NSCollectionView, itemForRepresentedObjectAt: Foundation.IndexPath) -&gt; __ObjC.NSCollectionViewItem"
                   moduleName = "MyProject"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/baby/Developer/MyProjects/MyProject/MyProject/Screens/ProjectDetail/ProjectDetailViewController.swift"
-                  timestampString = "546115218.989925"
+                  timestampString = "546115412.253384"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "98"

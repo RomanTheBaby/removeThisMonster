@@ -1143,9 +1143,10 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dHD-Qc-YMV">
-                                <rect key="frame" x="20" y="16" width="659" height="22"/>
+                                <rect key="frame" x="434" y="15" width="245" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="UE3-gU-Z61"/>
+                                    <constraint firstAttribute="height" constant="22" id="0Oz-en-5gt"/>
+                                    <constraint firstAttribute="width" constant="245" id="3hD-Az-NBo"/>
                                 </constraints>
                                 <buttonCell key="cell" type="smallSquare" title="Додати картку" bezelStyle="smallSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jWL-19-gMO">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1163,30 +1164,44 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="We1-WV-1Ij">
+                                <rect key="frame" x="20" y="15" width="226" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="226" id="dAT-PJ-EhV"/>
+                                    <constraint firstAttribute="height" constant="22" id="rS9-M1-Nai"/>
+                                </constraints>
+                                <buttonCell key="cell" type="smallSquare" title="Скасувати" bezelStyle="smallSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="O3b-BZ-4NF">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="actionCancel:" target="BYx-oL-UHD" id="g3y-2r-xYx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="XPb-zp-M7S" firstAttribute="top" secondItem="Egm-7q-XgX" secondAttribute="bottom" constant="8" id="1Pl-rk-TRo"/>
-                            <constraint firstItem="dHD-Qc-YMV" firstAttribute="leading" secondItem="ilb-1U-biQ" secondAttribute="leading" id="AU5-W1-WGT"/>
                             <constraint firstItem="F5N-gm-bxv" firstAttribute="top" secondItem="aEz-4s-gnu" secondAttribute="top" constant="20" id="DfG-3n-ZYG"/>
                             <constraint firstItem="Egm-7q-XgX" firstAttribute="top" secondItem="aEz-4s-gnu" secondAttribute="top" constant="20" id="IDS-cK-k0g"/>
-                            <constraint firstItem="dHD-Qc-YMV" firstAttribute="top" secondItem="5nj-0D-Orf" secondAttribute="bottom" constant="8" id="IUD-21-8Xo"/>
                             <constraint firstAttribute="trailing" secondItem="xpt-lh-cio" secondAttribute="trailing" constant="20" id="JQN-90-PrF"/>
                             <constraint firstItem="XPb-zp-M7S" firstAttribute="leading" secondItem="aEz-4s-gnu" secondAttribute="leading" constant="20" id="M24-fl-KfW"/>
                             <constraint firstItem="xpt-lh-cio" firstAttribute="top" secondItem="F5N-gm-bxv" secondAttribute="bottom" constant="8" id="OaJ-Up-oiw"/>
                             <constraint firstAttribute="trailing" secondItem="aYg-1o-X0K" secondAttribute="trailing" constant="20" id="OxP-TK-7Pe"/>
                             <constraint firstItem="aYg-1o-X0K" firstAttribute="centerY" secondItem="ilb-1U-biQ" secondAttribute="centerY" id="PAd-RN-y7e"/>
                             <constraint firstAttribute="trailing" secondItem="5nj-0D-Orf" secondAttribute="trailing" constant="20" id="PMO-wj-fTh"/>
+                            <constraint firstItem="dHD-Qc-YMV" firstAttribute="top" secondItem="5nj-0D-Orf" secondAttribute="bottom" constant="8" id="VEb-NF-ywa"/>
                             <constraint firstAttribute="trailing" secondItem="F5N-gm-bxv" secondAttribute="trailing" constant="20" id="Xfx-3a-hCq"/>
+                            <constraint firstItem="We1-WV-1Ij" firstAttribute="leading" secondItem="aEz-4s-gnu" secondAttribute="leading" constant="20" id="Y6l-Za-XWJ"/>
                             <constraint firstItem="F5N-gm-bxv" firstAttribute="leading" secondItem="Egm-7q-XgX" secondAttribute="trailing" constant="8" id="YLA-ku-45M"/>
-                            <constraint firstItem="dHD-Qc-YMV" firstAttribute="trailing" secondItem="aYg-1o-X0K" secondAttribute="trailing" id="Zep-Hg-TIZ"/>
                             <constraint firstItem="ilb-1U-biQ" firstAttribute="leading" secondItem="aEz-4s-gnu" secondAttribute="leading" constant="20" id="acb-ap-NTc"/>
                             <constraint firstItem="ilb-1U-biQ" firstAttribute="top" secondItem="XPb-zp-M7S" secondAttribute="bottom" constant="8" id="bUz-hc-1Ba"/>
                             <constraint firstItem="Egm-7q-XgX" firstAttribute="leading" secondItem="aEz-4s-gnu" secondAttribute="leading" constant="20" id="dJs-JA-fwp"/>
                             <constraint firstItem="5nj-0D-Orf" firstAttribute="leading" secondItem="aEz-4s-gnu" secondAttribute="leading" constant="20" id="eEg-za-p3B"/>
                             <constraint firstItem="aYg-1o-X0K" firstAttribute="leading" secondItem="ilb-1U-biQ" secondAttribute="trailing" constant="8" id="f8q-Vy-DTK"/>
+                            <constraint firstItem="We1-WV-1Ij" firstAttribute="top" secondItem="5nj-0D-Orf" secondAttribute="bottom" constant="8" id="nrg-pw-QDZ"/>
                             <constraint firstItem="xpt-lh-cio" firstAttribute="leading" secondItem="XPb-zp-M7S" secondAttribute="trailing" constant="8" id="pjn-sv-QJx"/>
                             <constraint firstItem="5nj-0D-Orf" firstAttribute="top" secondItem="ilb-1U-biQ" secondAttribute="bottom" constant="8" id="qM3-1L-Hp6"/>
-                            <constraint firstAttribute="bottom" secondItem="dHD-Qc-YMV" secondAttribute="bottom" constant="16" id="wbt-gw-qh1"/>
+                            <constraint firstAttribute="trailing" secondItem="dHD-Qc-YMV" secondAttribute="trailing" constant="20" id="w3I-tU-I0t"/>
                         </constraints>
                     </view>
                     <connections>
