@@ -22,7 +22,7 @@ class DBUser: Object {
     var asDomain: User {
 
         let formattedDate = Date(timeIntervalSince1970: Double(created))
-        return User(username: username, password: password, created: formattedDate, cards: Array(cards))
+        return User(username: username, password: password, created: formattedDate, cards: Array(Set(cards)))
     }
 
     func sync(domain: User) {

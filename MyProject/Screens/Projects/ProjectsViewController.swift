@@ -62,8 +62,9 @@ class ProjectsViewController: NSViewController {
     }
 
     @IBAction func actionDeleteAll(_ sender: NSButton) {
+        UsersRealmProvider.SharedInstance.deleteAllCards()
         ProdjectsRealmProvider.SharedInstance.removeAllProjects()
-        collectionView.reloadData()
+        view.window?.close()
     }
 
     @IBAction private func actionAddProdject(_ sender: NSButton) {

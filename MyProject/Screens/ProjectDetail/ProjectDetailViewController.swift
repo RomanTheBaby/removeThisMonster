@@ -22,7 +22,9 @@ class ProjectDetailViewController: NSViewController {
         return UsersRealmProvider.SharedInstance.cards(for: project)
     }
 
-    private let availableUsers = UsersRealmProvider.SharedInstance.fetchAllUsers()
+    private var availableUsers: [User] {
+        return UsersRealmProvider.SharedInstance.fetchAllUsers()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,9 +83,6 @@ extension ProjectDetailViewController: NSCollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == todoCollectionView {
-            print("Section: ", section, "\nItems: ", cards(for: collectionView).count, "\n\n============")
-        }
         return cards(for: collectionView).count
     }
 
@@ -92,7 +91,8 @@ extension ProjectDetailViewController: NSCollectionViewDataSource {
         let cardItem = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "CardItem"), for: indexPath) as! CardItem
         let card = allCards[indexPath.item]
 
-        cardItem.configure(with: card, executers: availableUsers.filter { user in user.cards.index(where: { $0 == card.created }) != nil })
+        let executers = availableUsers.filter { user in user.cards.index(where: { $0 == card.created }) != nil }
+        cardItem.configure(with: card, executers: executers)
 
         cardItem.actionHandler = { self.reloadAllData() }
         return cardItem

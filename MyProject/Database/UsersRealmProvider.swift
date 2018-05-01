@@ -10,6 +10,7 @@ import Cocoa
 import RealmSwift
 
 protocol UsersRealmProviderProtocol {
+    func deleteAllCards()
     func fetchAllUsers() -> [User]
     func cards(for project: Project) -> [Card]
     func retriveUser(with authInfo: AuthInfo) -> User?
@@ -81,14 +82,6 @@ final class UsersRealmProvider: UsersRealmProviderProtocol {
     func saveUser(_ user: User, update: Bool, completion: @escaping () -> Void, error: @escaping (Error) -> Void) {
         guard let realm = realm() else { return }
 
-//        guard realm.object(ofType: DBUser.self, forPrimaryKey: user.username) == nil else {
-//            let err = NSError(domain: "com.alinka",
-//                                code: 404,
-//                                userInfo: [NSLocalizedDescriptionKey: "Користувач з таким імя вже існує!"])
-//            error(err)
-//            return
-//        }
-
         let realmUser: DBUser
 
         if !update {
@@ -132,13 +125,24 @@ final class UsersRealmProvider: UsersRealmProviderProtocol {
         realm.beginWrite()
         dbCard.sync(domain: card)
         realm.create(DBCard.self, value: dbCard, update: true)
-//        realm.add(dbCard, update: true)
 
         do {
             try realm.commitWrite()
             completion()
         } catch let err {
             error(err)
+        }
+    }
+
+    func deleteAllCards() {
+        guard let realm = realm() else { return }
+        realm.beginWrite()
+        realm.deleteAll()
+
+        do {
+            try realm.commitWrite()
+        } catch let err {
+            print(err)
         }
     }
 }
