@@ -17,6 +17,7 @@ class AddCardViewController: NSViewController {
     @IBOutlet weak private var selectedUsersLabel: NSTextField!
 
     var project: Project!
+    var presenter: ProjectDetailViewController?
     private let availableUsers = UsersRealmProvider.SharedInstance.fetchAllUsers()
 
     private var selectedUsers = [User]()
@@ -68,9 +69,8 @@ class AddCardViewController: NSViewController {
                 mutatedUser.cards.append(card.created)
                 UsersRealmProvider.SharedInstance.saveUser(mutatedUser, update: true, completion: {
                     usersCount += 1
-                    if usersCount == self.selectedUsers.count - 1 {
-                        let parent = self.parent as? ProjectDetailViewController
-                        parent?.reloadAllData()
+                    if usersCount == self.selectedUsers.count {
+                        self.presenter?.reloadAllData()
                         self.dismissViewController(self)
                     }
                 }, error: { (err) in
@@ -84,6 +84,8 @@ class AddCardViewController: NSViewController {
     }
 
     private func addUserToCard(named username: String) {
+        guard !username.isEmpty else { return }
+
         if let userIndex = userNames.index(of: username) {
             let user = availableUsers[userIndex]
             if selectedUsers.index(of: user) == nil {
@@ -95,11 +97,5 @@ class AddCardViewController: NSViewController {
         } else {
             self.showAlert(for: "Користувача з таким імям не існує!")
         }
-    }
-}
-
-extension NSTextView {
-    open override func hitTest(_ point: NSPoint) -> NSView? {
-        return nil
     }
 }

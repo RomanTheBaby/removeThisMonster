@@ -34,23 +34,12 @@ class ProjectDetailViewController: NSViewController {
         todoCollectionView.collectionViewLayout = layout
         inProgressCollectionView.collectionViewLayout = layout
         doneCollectionView.collectionViewLayout = layout
+        reloadAllData()
 
         title = project.name
 
         view.wantsLayer = true
         view.layer?.backgroundColor = NSColor.blue.cgColor
-    }
-
-    override func viewWillAppear() {
-        super.viewWillAppear()
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.reloadAllData()
-        }
-    }
-
-    override func viewDidAppear() {
-        super.viewDidAppear()
     }
 
     private func cards(with status: CardStatus) -> [Card] {
@@ -75,6 +64,7 @@ class ProjectDetailViewController: NSViewController {
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         guard let viewController = segue.destinationController as? AddCardViewController else { return }
         viewController.project = project
+        viewController.presenter = self
     }
 
     func reloadAllData() {
@@ -90,7 +80,7 @@ extension ProjectDetailViewController: NSCollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == doneCollectionView {
+        if collectionView == todoCollectionView {
             print("Section: ", section, "\nItems: ", cards(for: collectionView).count, "\n\n============")
         }
         return cards(for: collectionView).count

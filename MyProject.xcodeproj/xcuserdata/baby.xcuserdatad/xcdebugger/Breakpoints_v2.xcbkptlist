@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyProject/Screens/ProjectDetail/ProjectDetailViewController.swift"
-            timestampString = "546893849.97813"
+            timestampString = "546894600.77755"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "collectionView(_:itemForRepresentedObjectAt:)"
             landmarkType = "7">
             <Locations>
@@ -73,12 +73,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyProject/Database/UsersRealmProvider.swift"
-            timestampString = "546893849.9784859"
+            timestampString = "546894600.777616"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "132"
             endingLineNumber = "132"
             landmarkName = "saveCard(_:completion:error:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyProject/Screens/ProjectDetail/ProjectDetailViewController.swift"
+            timestampString = "546894600.777913"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "reloadAllData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
